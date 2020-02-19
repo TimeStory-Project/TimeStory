@@ -1,5 +1,5 @@
 """
-ASGI config for timestory project.
+ASGI config for TimeStory project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'timestory.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'TimeStory.settings')
 
 application = get_asgi_application()
