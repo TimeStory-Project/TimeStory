@@ -1,0 +1,29 @@
+{% load static %}
+
+<header>
+  <nav class="navbar navbar-expand-lg bg-secondary fixed-top navbar-light">
+    <div class="container col-3 justify-content-start">
+      <a href="#"><img src="{% static 'image/logo.png' %}" height="50"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+    <div class="container col-6 ">
+      <div class="navbar-collapse collapse justify-content-center" id="collapsingNavbar">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="./">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="watches">Watches</a>
+          <a class="nav-item nav-link" href="contactus">Contact Us</a>
+        </div>
+      </div>
+    </div>
+    <div class="container col-3 justify-content-end">
+      <form class="form-inline">
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+</header>
