@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'TimeStory.urls'
+ROOT_URLCONF = 'timestory.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'TimeStory.wsgi.application'
+WSGI_APPLICATION = 'timestory.wsgi.application'
 
 
 # Database
