@@ -1,7 +1,9 @@
 {% extends 'main/base.html' %}
 {% load static %}
+{% load functions %}
 
 {% block content %}
+
 
 <!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns#" itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -213,10 +215,22 @@
 
       </div>
 
+      <div class="col-lg-9 col-md-6 mb-8">
+
+
+     
+        
+      {% for watch in watches %}
+
+      {% if forloop.counter|modulo:3 == 1 %}
+      <div class="row">
+      {% endif %}
+      
+      {% if forloop.counter|modulo:3 == 1 %}
 
       <!--Grid column First watch column-->
-      <div class="col-lg-2 col-md-5 mb-4">
-          
+      <div class="col-lg-3 col-md-5 mb-4">
+        
         <!--Start of Card-->
         <div class="card">
 
@@ -236,19 +250,19 @@
           <div class="card-body text-left">
             <!--Category & Title-->
             <a href="" class="wornstatus">
-                Unworn
+                {{watch.status}}
             </a>
 
             <div class="gap-1"></div>
 
             <a href="" class="brand">
-                Rolex
+                {{watch.brand}}
             </a>
 
             <div class="gap-small"></div>
 
             <a href="" class="model">
-                Submariner
+                {{watch.model}}
             </a>
 
             <div class="gap-small"></div>
@@ -260,7 +274,7 @@
             <div class="gap-1"></div>
 
             <a href="" class="price">
-                SGD 13,000
+                ${{watch.price}}
             </a>
             
             <hr>
@@ -273,134 +287,157 @@
       </div>
       <!--End of first Grid column-->
 
+      {% elif forloop.counter|modulo:3 == 2 %}
+
+      <!--Grid column Second watch column-->
+      <div class="col-lg-3 col-md-5 mb-4">
+       
+       <!--Start of Card-->
+       <div class="card">
+
+         <!--Card image-->
+         <div class="view overlay">
+           <div class="gap-1"></div>
+           <img src="https://www.thewatchcompany.com/media/catalog/product/cache/7201a60ec3a4244a7d22fa59c65163e2/1/1/116610_20LN_1546998610.jpg" 
+           class="card-img-top"
+             alt="">
+           <a>
+             <div class="mask rgba-white-slight"></div>
+           </a>
+         </div>
+         <!--Card image-->
+
+         <!--Card content-->
+         <div class="card-body text-left">
+           <!--Category & Title-->
+           <a href="" class="wornstatus">
+               {{watch.status}}
+           </a>
+
+           <div class="gap-1"></div>
+
+           <a href="" class="brand">
+               {{watch.brand}}
+           </a>
+
+           <div class="gap-small"></div>
+
+           <a href="" class="model">
+               {{watch.model}}
+           </a>
+
+           <div class="gap-small"></div>
+
+           <a href="" class="modelnumber">
+               116613LB
+           </a>
+
+           <div class="gap-1"></div>
+
+           <a href="" class="price">
+               ${{watch.price}}
+           </a>
+           
+           <hr>
+
+         </div>
+         <!--Card content-->
+
+       </div>
+       <!--End of Card-->
+     </div>
+     <!--End of Second Grid column-->
+
+     {% elif forloop.counter|modulo:3 == 0 %}
+
+      <!--Grid column Third watch column-->
+      <div class="col-lg-3 col-md-5 mb-4">
+ 
+       <!--Start of Card-->
+       <div class="card">
+
+         <!--Card image-->
+         <div class="view overlay">
+           <div class="gap-1"></div>
+           <img src="https://www.thewatchcompany.com/media/catalog/product/cache/7201a60ec3a4244a7d22fa59c65163e2/1/1/116610_20LN_1546998610.jpg" 
+           class="card-img-top"
+             alt="">
+           <a>
+             <div class="mask rgba-white-slight"></div>
+           </a>
+         </div>
+         <!--Card image-->
+
+         <!--Card content-->
+         <div class="card-body text-left">
+           <!--Category & Title-->
+           <a href="" class="wornstatus">
+               {{watch.status}}
+           </a>
+
+           <div class="gap-1"></div>
+
+           <a href="" class="brand">
+               {{watch.brand}}
+           </a>
+
+           <div class="gap-small"></div>
+
+           <a href="" class="model">
+               {{watch.model}}
+           </a>
+
+           <div class="gap-small"></div>
+
+           <a href="" class="modelnumber">
+               116613LB
+           </a>
+
+           <div class="gap-1"></div>
+
+           <a href="" class="price">
+               ${{watch.price}}
+           </a>
+           
+           <hr>
+
+         </div>
+         <!--Card content-->
+
+       </div>
+       <!--End of Card-->
+     </div>
+     <!--End of Third Grid column-->
+
+    {% endif %}
+
+    {% if forloop.counter|modulo:3 == 0  %}
+    </div> <!-- This div is for the row-->
+    {% endif %}
 
 
-      <!--Grid column Second Watch column-->
-      <div class="col-lg-2 col-md-6 mb-4">
 
-        <!--Card-->
-        <div class="card">
 
-          <!--Card image-->
-          <div class="view overlay">
-            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13.jpg" class="card-img-top"
-              alt="">
-            <a>
-              <div class="mask rgba-white-slight"></div>
-            </a>
-          </div>
-          <!--Card image-->
+ 
+    {% endfor %}
+    </div>
 
-          <!--Card content-->
-          <div class="card-body text-center">
-            <!--Category & Title-->
-            <a href="" class="grey-text">
-              <h5>Sport wear</h5>
-            </a>
-            <h5>
-              <strong>
-                <a href="" class="dark-grey-text">Sweatshirt</a>
-              </strong>
-            </h5>
 
-            <h4 class="font-weight-bold blue-text">
-              <strong>139$</strong>
-            </h4>
 
-          </div>
-          <!--Card content-->
-
-        </div>
-        <!--Card-->
-
-      </div>
-      <!--End of 2nd Grid column-->
-
-      <!--Grid column 3rd Watch column-->
-      <div class="col-lg-2 col-md-6 mb-4">
-
-        <!--Card-->
-        <div class="card">
-
-          <!--Card image-->
-          <div class="view overlay">
-            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14.jpg" class="card-img-top"
-              alt="">
-            <a>
-              <div class="mask rgba-white-slight"></div>
-            </a>
-          </div>
-          <!--Card image-->
-
-          <!--Card content-->
-          <div class="card-body text-center">
-            <!--Category & Title-->
-            <a href="" class="grey-text">
-              <h5>Sport wear</h5>
-            </a>
-            <h5>
-              <strong>
-                <a href="" class="dark-grey-text">Grey blouse
-                  <span class="badge badge-pill primary-color">bestseller</span>
-                </a>
-              </strong>
-            </h5>
-
-            <h4 class="font-weight-bold blue-text">
-              <strong>99$</strong>
-            </h4>
-
-          </div>
-          <!--Card content-->
-
-        </div>
-        <!--Card-->
-      </div>
-      <!--End of 3rd Grid column-->
-
-          <!--Grid column Start of 4th watch column-->
-          <div class="col-lg-2 col-md-6 mb-4">
-
-            <!--Card-->
-            <div class="card">
     
-              <!--Card image-->
-              <div class="view overlay">
-                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14.jpg" class="card-img-top"
-                  alt="">
-                <a>
-                  <div class="mask rgba-white-slight"></div>
-                </a>
-              </div>
-              <!--Card image-->
-    
-              <!--Card content-->
-              <div class="card-body text-center">
-                <!--Category & Title-->
-                <a href="" class="grey-text">
-                  <h5>Sport wear</h5>
-                </a>
-                <h5>
-                  <strong>
-                    <a href="" class="dark-grey-text">Grey blouse
-                      <span class="badge badge-pill primary-color">bestseller</span>
-                    </a>
-                  </strong>
-                </h5>
-    
-                <h4 class="font-weight-bold blue-text">
-                  <strong>99$</strong>
-                </h4>
-    
-              </div>
-              <!--Card content-->
-    
-            </div>
-            <!--Card-->
-          </div>
-          <!--End of 4th Grid column-->
+
+
+      
+
+
+
+
+     
 
        
+
+
+
 
 
     </div>
