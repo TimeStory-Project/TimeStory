@@ -74,17 +74,20 @@
             font-size: 56px;
             font-family: Garamond;
             font-weight: bolder;
+            text-align: left;
         }
 
         .sidebarWatchBrand {
           color: grey;
           font-size: 22px;
           font-family: Garamond;
+          text-align: left;
         }
 
         .sidebarDropdown {
           position: relative;
-          display: inline-block;
+          display: inline-block
+          text-align: left;
         }
 
         .dropdown-content {
@@ -95,12 +98,18 @@
         
         .dropdown-content a {
           color:blue;
-          
+          text-align: left;
           display: block;
           text-decoration: underline;
           font-size: 16px;
           font-family: Garamond;
           
+        }
+
+        .watchimage>img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
         }
 
         .sidebarDropdown-content a:hover {background-color: #ddd;}
@@ -113,8 +122,9 @@
           text-align: right;
           width: 90%;
           color: black;
-          
         }
+        
+      
 
 
     </style>
@@ -171,6 +181,9 @@
     <!--Grid row-->
     <div class="row wow fadeIn">
 
+      <div class="col-lg-1 col-md-6 mb-4">
+      </div>
+
       <!-- This is for the side bar navigation menu-->
       <div class="col-lg-3 col-md-6 mb-4">
 
@@ -215,11 +228,11 @@
 
       </div>
 
-      <div class="col-lg-9 col-md-6 mb-8">
 
+      <!--For the Main Catalougue-->
+      <div class="col-lg-8 col-md-6 mb-8">
+   
 
-     
-        
       {% for watch in watches %}
 
       {% if forloop.counter|modulo:3 == 1 %}
@@ -237,18 +250,17 @@
           <!--Card image-->
           <div class="view overlay">
             <div class="gap-1"></div>
-            <img src="https://www.thewatchcompany.com/media/catalog/product/cache/7201a60ec3a4244a7d22fa59c65163e2/1/1/116610_20LN_1546998610.jpg" 
-            class="card-img-top"
-              alt="">
-            <a>
-              <div class="mask rgba-white-slight"></div>
-            </a>
+            <div class="watchimage">
+              <img src="https://www.thewatchcompany.com/media/catalog/product/cache/7201a60ec3a4244a7d22fa59c65163e2/1/1/116610_20LN_1546998610.jpg" 
+              style="width:200px;height:230px;"
+                alt="">
+            </div>
           </div>
           <!--Card image-->
 
           <!--Card content-->
           <div class="card-body text-left">
-            <!--Category & Title-->
+
             <a href="" class="wornstatus">
                 {{watch.status}}
             </a>
@@ -298,18 +310,18 @@
          <!--Card image-->
          <div class="view overlay">
            <div class="gap-1"></div>
-           <img src="https://www.thewatchcompany.com/media/catalog/product/cache/7201a60ec3a4244a7d22fa59c65163e2/1/1/116610_20LN_1546998610.jpg" 
-           class="card-img-top"
-             alt="">
-           <a>
-             <div class="mask rgba-white-slight"></div>
-           </a>
+           
+          <div class="watchimage">
+            <img src="https://www.prestigetime.com/images/watches/1303520--new_main.jpg?ver=1" 
+            style="width:200px;height:230px;"
+              alt="">
+          </div>
          </div>
          <!--Card image-->
 
          <!--Card content-->
          <div class="card-body text-left">
-           <!--Category & Title-->
+
            <a href="" class="wornstatus">
                {{watch.status}}
            </a>
@@ -352,61 +364,60 @@
 
       <!--Grid column Third watch column-->
       <div class="col-lg-3 col-md-5 mb-4">
- 
-       <!--Start of Card-->
-       <div class="card">
+        
+        <!--Start of Card-->
+        <div class="card">
 
-         <!--Card image-->
-         <div class="view overlay">
-           <div class="gap-1"></div>
-           <img src="https://www.thewatchcompany.com/media/catalog/product/cache/7201a60ec3a4244a7d22fa59c65163e2/1/1/116610_20LN_1546998610.jpg" 
-           class="card-img-top"
-             alt="">
-           <a>
-             <div class="mask rgba-white-slight"></div>
-           </a>
-         </div>
-         <!--Card image-->
+          <!--Card image-->
+          <div class="view overlay">
+            <div class="gap-1"></div>
+            <div class="watchimage">
+              <img src="https://www.thewatchcompany.com/media/catalog/product/cache/7201a60ec3a4244a7d22fa59c65163e2/1/1/116610_20LN_1546998610.jpg" 
+              style="width:200px;height:230px;"
+                alt="">
+            </div>
+          </div>
+          <!--Card image-->
 
-         <!--Card content-->
-         <div class="card-body text-left">
-           <!--Category & Title-->
-           <a href="" class="wornstatus">
-               {{watch.status}}
-           </a>
+          <!--Card content-->
+          <div class="card-body text-left">
 
-           <div class="gap-1"></div>
+            <a href="" class="wornstatus">
+                {{watch.status}}
+            </a>
 
-           <a href="" class="brand">
-               {{watch.brand}}
-           </a>
+            <div class="gap-1"></div>
 
-           <div class="gap-small"></div>
+            <a href="" class="brand">
+                {{watch.brand}}
+            </a>
 
-           <a href="" class="model">
-               {{watch.model}}
-           </a>
+            <div class="gap-small"></div>
 
-           <div class="gap-small"></div>
+            <a href="" class="model">
+                {{watch.model}}
+            </a>
 
-           <a href="" class="modelnumber">
-               116613LB
-           </a>
+            <div class="gap-small"></div>
 
-           <div class="gap-1"></div>
+            <a href="" class="modelnumber">
+                116613LB
+            </a>
 
-           <a href="" class="price">
-               ${{watch.price}}
-           </a>
-           
-           <hr>
+            <div class="gap-1"></div>
 
-         </div>
-         <!--Card content-->
+            <a href="" class="price">
+                ${{watch.price}}
+            </a>
+            
+            <hr>
 
-       </div>
-       <!--End of Card-->
-     </div>
+          </div>
+          <!--Card content-->
+
+        </div>
+        <!--End of Card-->
+      </div>
      <!--End of Third Grid column-->
 
     {% endif %}
@@ -416,49 +427,15 @@
     {% endif %}
 
 
-
-
- 
     {% endfor %}
     </div>
-
-
-
-    
-
-
-      
-
-
-
-
-     
-
-       
-
-
-
 
 
     </div>
     <!--Grid row-->
 
-
-
-
-
-
-
   </section>
-  <!--Section: Products v.3-->
-
-
-
-
-
-
-
-
+  <!--Section: Main Catalogue-->
 
 </body>
 </html>
