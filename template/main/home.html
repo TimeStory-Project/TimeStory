@@ -12,7 +12,9 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    
     <style>
+        /* This are the css for the watches */
         .gap-1 {
             width:100%;
             height:10px;
@@ -62,45 +64,10 @@
             
         }
         hr { 
-            /* This is to create the line at bottom. Why hr no need put .hr */
+            /* This is to create the line to show spacing.*/
             background-color:#000;
             height: 0.1px;
             opacity: 0.2;
-        }
-
-        .sidebarHeader {
-            color: black;
-            font-size: 56px;
-            font-family: Garamond;
-            font-weight: bolder;
-            text-align: center;
-        }
-
-        .sidebarWatchBrand {
-          color: grey;
-          font-size: 22px;
-          font-family: Garamond;
-          text-align: center;
-        }
-
-        .sidebarDropdown {
-          position: relative;
-          text-align: center;
-        }
-
-        .dropdown-content {
-          display: none;
-          position:relative;
-          min-width: 160px;
-        }
-        
-        .dropdown-content a {
-          color:blue;
-          text-align: center;
-          display: block;
-          text-decoration: underline;
-          font-size: 18px;
-          font-family: Garamond;
         }
 
         .watchimage>img {
@@ -110,9 +77,6 @@
           margin-right: auto;
           
         }
-
-        .sidebarDropdown-content a:hover {background-color: #ddd;}
-        .sidebarDropdown:hover .dropdown-content {display: block;}
 
         .topBarNav {
           height: 40px;
@@ -176,7 +140,7 @@
     <!-- Grid Row -->
     <div class="row wow fadeIn">
 
-
+    <!-- This div helps me to centralize the home page's catalogue -->
     <div class="col-lg-1 col-md-6 mb-8">
     </div>
     
@@ -442,11 +406,8 @@
     {% endif %}
   
   
-      {% endfor %}
-        </div>
-
-
-
+    {% endfor %}
+    </div>
 
     </div>
     <!-- End of Grid Row -->
