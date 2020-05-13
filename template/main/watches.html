@@ -74,20 +74,19 @@
             font-size: 56px;
             font-family: Garamond;
             font-weight: bolder;
-            text-align: left;
+            text-align: center;
         }
 
         .sidebarWatchBrand {
           color: grey;
           font-size: 22px;
           font-family: Garamond;
-          text-align: left;
+          text-align: center;
         }
 
         .sidebarDropdown {
           position: relative;
-          display: inline-block
-          text-align: left;
+          text-align: center;
         }
 
         .dropdown-content {
@@ -98,12 +97,11 @@
         
         .dropdown-content a {
           color:blue;
-          text-align: left;
+          text-align: center;
           display: block;
           text-decoration: underline;
-          font-size: 16px;
+          font-size: 18px;
           font-family: Garamond;
-          
         }
 
         .watchimage>img {
@@ -181,11 +179,11 @@
     <!--Grid row-->
     <div class="row wow fadeIn">
 
-      <div class="col-lg-1 col-md-6 mb-4">
-      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+    
 
-      <!-- This is for the side bar navigation menu-->
-      <div class="col-lg-3 col-md-6 mb-4">
+      <!-- Side bar navigation menu for all brands of watch -->
+      <div class="col-lg-11 col-md-6 mb-4">
 
         <!-- The Header for the side bar menu-->
         <div class="sidebarHeader">
@@ -244,6 +242,9 @@
 
 
       </div>
+      <!-- End of side bar navigation menu for all brands of watches -->
+
+    </div>
 
 
       <!--For the Main Catalougue-->
@@ -445,7 +446,8 @@
 
 
     {% endfor %}
-    </div>
+      </div>
+       <!--End of the Main Catalougue-->
 
 
     </div>
