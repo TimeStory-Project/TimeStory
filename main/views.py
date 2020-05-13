@@ -4,7 +4,8 @@ from common.models import Product
 
 # Create your views here.
 def home(request):
-    return render(request, 'main/home.html')
+    watches = Product.objects.all()
+    return render(request, 'main/home.html', {'watches': watches})
 
 
 def contactus(request):
@@ -14,8 +15,5 @@ def contactus(request):
 def watches(request):
     #Ignore the redline under Product, it is ok. 
     watches = Product.objects.all()
-  
-
-    
 
     return render(request, 'main/watches.html', {'watches': watches})
