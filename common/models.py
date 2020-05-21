@@ -18,4 +18,6 @@ class Product(models.Model):
     strap = models.TextField(default="")
     buckle = models.TextField(default="")
     crystal = models.TextField(default="")
-	
+
+    def Name(self):
+        return self.brand + " " + self.model

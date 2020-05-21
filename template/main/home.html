@@ -1,8 +1,110 @@
 {% extends 'main/base.html' %}
 {% load static %}
+{% load functions %}
 
 {% block content %}
+
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <style>
+        /* This are the css for the watches */
+        .gap-1 {
+            width:100%;
+            height:10px;
+            background-color: white;
+        }
+        .gap-15 {
+            width:100%;
+            height:45px;
+            background-color: white;
+        }
+        .gap-small {
+            width:100%;
+            height:1px;
+            background-color: white;
+        }
+        .gap-20 {
+            width:100%;
+            height:60px;
+            background-color: whitesmoke;
+        }
+        .gap-30 {
+            width:100%;
+            height:100px;
+            background-color: white;
+        }
+
+        .wornstatus {
+            color: black;
+            font-size: 18px;
+        }
+        .brand {
+            color: black;
+            font-size: 18px;
+            line-height: 0.6;
+        }
+        .model {
+            color:black;
+            font-weight: bold;
+            font-size: 22px;
+            line-height: 0.6;
+        }
+        .modelnumber {
+            color: black;
+            font-size: 14px;
+            line-height: 0.6;
+            
+        }
+        .price {
+            color: green;
+            font-size: 22px;
+            font-weight: 990;
+            
+        }
+        hr { 
+            /* This is to create the line to show spacing.*/
+            background-color:#000;
+            height: 0.1px;
+            opacity: 0.2;
+        }
+
+        .watchimage>img {
+          object-fit: cover;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          
+        }
+
+        .topBarNav {
+          height: 40px;
+          text-decoration:wavy;
+          font-size: 16px;
+          text-align: right;
+          width: 90%;
+          color: black;
+        }
+        
+    
+    </style>
+</head>
+
+<body>
+
+
 <div style="padding-top: 65px">
+    
+  <!-- this div will give a gap of 45px -->
+  <div class="gap-15"></div>    
+
+    
     <!-- Carousell -->
     <div id="carouselExampleIndicators" class="carousel slide mx-5" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -25,6 +127,7 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span></a>
     </div>
+    <!-- End of Carousell -->
 
     <div class="my-5 mx-5">
         <hr id="separator">
@@ -37,6 +140,296 @@
                 allowfullscreen></iframe>
         </div>
     </div>
+    <!-- End of Video -->
+
+    <div class="my-5 mx-5">
+        <hr id="separator">
+    </div>
+
+    <!-- Catalogue for Home Page -->
+
+    <!-- Grid Row -->
+    <div class="row wow fadeIn">
+
+    <!-- This div helps me to centralize the home page's catalogue -->
+    <div class="col-lg-1 col-md-6 mb-8">
+    </div>
+    
+    <div class="col-lg-10 col-md-6 mb-8">
+   
+
+        {% for watch in watches %}
+  
+        {% if forloop.counter|modulo:4 == 1 %}
+        <div class="row">
+        {% endif %}
+        
+        {% if forloop.counter|modulo:4 == 1 %}
+  
+        <!--Grid column First watch column-->
+        <div class="col-lg-3 col-md-5 mb-4">
+          
+          <!--Start of Card-->
+          <div class="card">
+  
+            <!--Card image-->
+            <div class="view overlay">
+              <div class="gap-1"></div>
+              <div class="watchimage">
+                <img src="https://www.thewatchcompany.com/media/catalog/product/cache/7201a60ec3a4244a7d22fa59c65163e2/1/1/116610_20LN_1546998610.jpg" 
+                style="width:200px;height:230px;"
+                  alt="">
+              </div>
+            </div>
+            <!--Card image-->
+  
+            <!--Card content-->
+            <div class="card-body text-left">
+  
+              <a href="" class="wornstatus">
+                  {{watch.status}}
+              </a>
+  
+              <div class="gap-1"></div>
+  
+              <a href="" class="brand">
+                  {{watch.brand}}
+              </a>
+  
+              <div class="gap-small"></div>
+  
+              <a href="" class="model">
+                  {{watch.model}}
+              </a>
+  
+              <div class="gap-small"></div>
+  
+              <a href="" class="modelnumber">
+                  116613LB
+              </a>
+  
+              <div class="gap-1"></div>
+  
+              <a href="" class="price">
+                  ${{watch.price}}
+              </a>
+              
+              <hr>
+  
+            </div>
+            <!--Card content-->
+  
+          </div>
+          <!--End of Card-->
+        </div>
+        <!--End of first Grid column-->
+  
+        {% elif forloop.counter|modulo:4 == 2 %}
+  
+        <!--Grid column Second watch column-->
+        <div class="col-lg-3 col-md-5 mb-4">
+         
+         <!--Start of Card-->
+         <div class="card">
+  
+           <!--Card image-->
+           <div class="view overlay">
+             <div class="gap-1"></div>
+             
+            <div class="watchimage">
+              <img src="https://www.prestigetime.com/images/watches/1303520--new_main.jpg?ver=1" 
+              style="width:200px;height:230px;"
+                alt="">
+            </div>
+           </div>
+           <!--Card image-->
+  
+           <!--Card content-->
+           <div class="card-body text-left">
+  
+             <a href="" class="wornstatus">
+                 {{watch.status}}
+             </a>
+  
+             <div class="gap-1"></div>
+  
+             <a href="" class="brand">
+                 {{watch.brand}}
+             </a>
+  
+             <div class="gap-small"></div>
+  
+             <a href="" class="model">
+                 {{watch.model}}
+             </a>
+  
+             <div class="gap-small"></div>
+  
+             <a href="" class="modelnumber">
+                 116613LB
+             </a>
+  
+             <div class="gap-1"></div>
+  
+             <a href="" class="price">
+                 ${{watch.price}}
+             </a>
+             
+             <hr>
+  
+           </div>
+           <!--Card content-->
+  
+         </div>
+         <!--End of Card-->
+       </div>
+       <!--End of Second Grid column-->
+  
+       {% elif forloop.counter|modulo:4 == 3 %}
+  
+        <!--Grid column Third watch column-->
+        <div class="col-lg-3 col-md-5 mb-4">
+          
+          <!--Start of Card-->
+          <div class="card">
+  
+            <!--Card image-->
+            <div class="view overlay">
+              <div class="gap-1"></div>
+              <div class="watchimage">
+                <img src="https://www.thewatchcompany.com/media/catalog/product/cache/7201a60ec3a4244a7d22fa59c65163e2/1/1/116610_20LN_1546998610.jpg" 
+                style="width:200px;height:230px;"
+                  alt="">
+              </div>
+            </div>
+            <!--Card image-->
+  
+            <!--Card content-->
+            <div class="card-body text-left">
+  
+              <a href="" class="wornstatus">
+                  {{watch.status}}
+              </a>
+  
+              <div class="gap-1"></div>
+  
+              <a href="" class="brand">
+                  {{watch.brand}}
+              </a>
+  
+              <div class="gap-small"></div>
+  
+              <a href="" class="model">
+                  {{watch.model}}
+              </a>
+  
+              <div class="gap-small"></div>
+  
+              <a href="" class="modelnumber">
+                  116613LB
+              </a>
+  
+              <div class="gap-1"></div>
+  
+              <a href="" class="price">
+                  ${{watch.price}}
+              </a>
+              
+              <hr>
+  
+            </div>
+            <!--Card content-->
+  
+          </div>
+          <!--End of Card-->
+        </div>
+       <!--End of Third Grid column-->
+
+       {% elif forloop.counter|modulo:4 == 0 %}
+
+       <!-- Grid column Fourth watch column-->
+       <div class="col-lg-3 col-md-5 mb-4">
+          
+        <!--Start of Card-->
+        <div class="card">
+
+          <!--Card image-->
+          <div class="view overlay">
+            <div class="gap-1"></div>
+            <div class="watchimage">
+              <img src="https://www.thewatchcompany.com/media/catalog/product/cache/7201a60ec3a4244a7d22fa59c65163e2/1/1/116610_20LN_1546998610.jpg" 
+              style="width:200px;height:230px;"
+                alt="">
+            </div>
+          </div>
+          <!--Card image-->
+
+          <!--Card content-->
+          <div class="card-body text-left">
+
+            <a href="" class="wornstatus">
+                {{watch.status}}
+            </a>
+
+            <div class="gap-1"></div>
+
+            <a href="" class="brand">
+                {{watch.brand}}
+            </a>
+
+            <div class="gap-small"></div>
+
+            <a href="" class="model">
+                {{watch.model}}
+            </a>
+
+            <div class="gap-small"></div>
+
+            <a href="" class="modelnumber">
+                116613LB
+            </a>
+
+            <div class="gap-1"></div>
+
+            <a href="" class="price">
+                ${{watch.price}}
+            </a>
+            
+            <hr>
+
+          </div>
+          <!--Card content-->
+
+        </div>
+        <!--End of Card-->
+
+       <!--End of Fourth Grid column-->
+
+  
+      {% endif %}
+  
+      {% if forloop.counter|modulo:4 == 0  %}
+      </div> <!-- This div is for the row-->
+      {% endif %}
+
+      {% if forloop.counter|modulo:4 == 0  %}
+    </div> <!-- This div is for the row-->
+    {% endif %}
+  
+  
+    {% endfor %}
+    </div>
+
+    </div>
+    <!-- End of Grid Row -->
+
+    <!-- End of catalogue for Home Page-->
+
 </div>
-</div>
+
+
+
+</body>
+</html>
+
 {% endblock %}
