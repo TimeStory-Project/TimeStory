@@ -3,321 +3,308 @@
 
 {% block content %}
 
-<html lang="en-US">
-	<!-- Open Head -->
-	<head>
-		<meta charset="UTF-8"/>
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" itemscope itemtype="http://schema.org/WebPage" lang="en">
 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
 
-<link rel='stylesheet' id='woocommerce-general-css'  property='stylesheet' href='https://timestory.sg/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=3.8.1' type='text/css' media='all' />
-<link rel='stylesheet' id='g5plus_framework_bootstrap-css'  property='stylesheet' href='https://timestory.sg/wp-content/themes/handmade/assets/plugins/bootstrap/css/bootstrap.min.css?ver=5.3.3' type='text/css' media='all' />
-<link rel='stylesheet' id='g5plus_framework_style-css'  property='stylesheet' href='https://timestory.sg/wp-content/themes/handmade/style.css?ver=5.3.3' type='text/css' media='all' />
-<script type='text/javascript' src='https://timestory.sg/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp'></script>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<link href="style.css" rel="stylesheet">
+
+    <style>
+        .gap-1 {
+            width:100%;
+            height:10px;
+            background-color: white;
+        }
+        .gap-small {
+            width:100%;
+            height:1px;
+            background-color: white;
+        }
+        .gap-20 {
+            width:100%;
+            height:60px;
+            background-color: whitesmoke;
+        }
+        .gap-30 {
+            width:100%;
+            height:100px;
+            background-color: white;
+        }
 
 
-<style type="text/css">
+ 
+
+        .watchimage>img {
+            object-fit:scale-down;
+            width: 80%;
+            height: 80%;
+            
+          
+        }
 
 
-/* PRODUCT */
+        .product-detail-options {
+            margin-bottom: 25px;
+          }
+          .product-detail-top h6 {
+              font-family: 'Lato', sans-serif;
+              font-size: 14px;
+              font-weight: 700;
+              margin-bottom: 15px;
+              color: #8d8d8d;
+          }
+          .product-detail-top p {
+              font-family: 'Lato', sans-serif;
+              font-size: 14px;
+              font-weight: 400;
+              margin-bottom: 15px !important;
+              color: #8d8d8d;
+          }
+          .product-detail-top h5 {
+                font-weight: bold;
+              text-transform: uppercase;
+                font-size: 14px;
+                margin-bottom: 0px;
+          }
+          .product-detail-top h3 {
+                font-family: 'Lato', sans-serif;
+              font-size: 40px;
+              font-weight: 700;
+              margin-bottom: 15px;
+              color: #000;
+          }
+          .product-detail-options h5 {
+            font-family: 'Lato', sans-serif;
+            font-size: 14px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: #000;
+            text-transform: uppercase;
+          }
+          .product-detail-options p {
+            font-family: 'Lato', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            margin-bottom: 5px;
+            color: #8d8d8d;
+            line-height: 15px;
+            word-break: break-word;
+          }
 
-	.site-content-single-product .single-product-info .summary-product-wrap .product-single-short-description {
-        margin-top: -20px;
-    }
-	.product-detail-options {
-      margin-bottom: 25px;
-	}
-	.product-detail-top h6 {
-        font-family: 'Lato', sans-serif;
-        font-size: 14px;
-        font-weight: 700;
-        margin-bottom: 15px;
-        color: #8d8d8d;
-    }
-	.product-detail-top p {
-        font-family: 'Lato', sans-serif;
-        font-size: 14px;
-        font-weight: 400;
-        margin-bottom: 15px !important;
-        color: #8d8d8d;
-    }
-	.product-detail-top h5 {
-      	font-weight: bold;
-    	text-transform: uppercase;
-      	font-size: 14px;
-      	margin-bottom: 0px;
-    }
-	.product-detail-top h3 {
-      	font-family: 'Lato', sans-serif;
-        font-size: 40px;
-        font-weight: 700;
-        margin-bottom: 15px;
-        color: #000;
-    }
-    .product-detail-options h5 {
-      font-family: 'Lato', sans-serif;
-      font-size: 14px;
-      font-weight: 800;
-      margin-bottom: 8px;
-      color: #000;
-      text-transform: uppercase;
-    }
-    .product-detail-options p {
-      font-family: 'Lato', sans-serif;
-      font-size: 14px;
-      font-weight: 400;
-      margin-bottom: 5px;
-      color: #8d8d8d;
-      line-height: 15px;
-      word-break: break-word;
-    }
-    .site-content-single-product .single-product-info .summary-product-wrap .product_meta {
-        display: none;
-    }
-    .site-content-single-product .single-product-info .summary-product-wrap p.price {
-        visibility: hidden;
-        line-height: 0.5!important;
-        margin-bottom: 0!important;
-    }
-    .site-content-single-product .single-product-info .summary-product-wrap {
-      padding: 20px;
-      background-color: #F0F0F0;
-    }
-	.site-content-single-product .single-product-info .summary-product-wrap, .site-content-single-product .single-product-info .single-product-image-wrap {
-      width: 50%;
-    }
-    .site-content-single-product .single-product-info .summary-product-wrap h1.product_title {
-        font-family: 'Lato', sans-serif;
-        font-size: 40px;
-        font-weight: 700;
-        margin-bottom: 15px;
-        color: #000;
-      	line-height: 1.1;
-    }
-    .single-product-title-margin {
-        margin-top: 0px!important;
-        margin-bottom: 30px!important;
-    }
-    ul.breadcrumbs {
-        padding: 15px 0!important;
-    }
-    .woocommerce div.product div.images .flex-control-thumbs li img {
-        border: 1px solid #c0c0c0;
-    }
-    .woocommerce div.product div.images.woocommerce-product-gallery .flex-viewport{
-        border: 1px solid #f0f0f0;
-    }
-    .product-listing.woocommerce .product-link{
-        background-color: transparent;
-    }
-    .product-item-inner:hover .product-thumb-secondary{
-        transform: scale(1.1);
-        transition: transform .5s;
-    }
-    .product-item-inner{
-        overflow:hidden;
-    }
-    @media screen and (max-width:750px){
-        .site-content-single-product .single-product-info .summary-product-wrap, .site-content-single-product .single-product-info .single-product-image-wrap {
-          width: 100%;
+          .site-content-single-product .single-product-info .summary-product-wrap .product_meta {
+            display: none;
+        }
+        .site-content-single-product .single-product-info .summary-product-wrap p.price {
+            visibility: hidden;
+            line-height: 0.5!important;
+            margin-bottom: 0!important;
         }
         .site-content-single-product .single-product-info .summary-product-wrap {
-            margin-top: 20px;
+          padding: 20px;
+          background-color: #F0F0F0;
         }
-    }
+        .site-content-single-product .single-product-info .summary-product-wrap, .site-content-single-product .single-product-info .single-product-image-wrap {
+          width: 50%;
+        }
+        .site-content-single-product .single-product-info .summary-product-wrap h1.product_title {
+            font-family: 'Lato', sans-serif;
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #000;
+              line-height: 1.1;
+        }
 
-</style>
-                              
-</head>
-<!-- Close Header -->
-    
+          @media screen and (max-width:750px){
+            .site-content-single-product .single-product-info .summary-product-wrap, .site-content-single-product .single-product-info .single-product-image-wrap {
+              width: 100%;
+            }
+            .site-content-single-product .single-product-info .summary-product-wrap {
+                margin-top: 20px;
+            }
+        }
 
-<body class="product-template-default single single-product postid-4379 logged-in admin-bar no-customize-support wp-embed-responsive theme-handmade woocommerce woocommerce-page woocommerce-no-js footer-static header-9 wpb-js-composer js-comp-ver-6.1 vc_responsive">
 
-	
 
-<main  class="single-product-wrap">
-    <div class="container clearfix">
-    
-        <div class="row clearfix">
+
+        
+        /* [2] Transition property for smooth transformation of images */
+        .img-hover-zoom img {
+            transition: transform .5s ease;
+        }
+        
+        /* [3] Finally, transforming the image when container gets hovered */
+        .img-hover-zoom:hover img {
+            transform: scale(1.2);
+        }
+
+        .smaller-image {
+
+            object-fit:scale-down;
+            width: 10%;
+            height: 10%;
             
-        <div class="site-content-single-product col-md-12">
-                    
-        <div id="product-4379" class="product type-product post-4379 status-publish first instock product_cat-rolex product_cat-sold-rolex has-post-thumbnail shipping-taxable purchasable product-type-simple">
+        }
 
-	<div class="single-product-info clearfix">
-
-        <!-- Start of Image -->
-		<div class="single-product-image-wrap">
-			<div class="single-product-image">
-
-                <div class="woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-4 images" data-columns="4" style="opacity: 0; transition: opacity .25s ease-in-out;">
-                    <figure class="woocommerce-product-gallery__wrapper">
-
-
-                        <div data-thumb="https://timestory.sg/wp-content/uploads/2019/11/59CAC7E4-3288-48CC-AE7C-7EE8AD9AAEC1-100x100.jpeg" 
-                        data-thumb-alt="" class="woocommerce-product-gallery__image">
-
-                        <a href="https://timestory.sg/wp-content/uploads/2019/11/59CAC7E4-3288-48CC-AE7C-7EE8AD9AAEC1-e1574915694231.jpeg">
-
-                            <img width="600" height="762" src="https://timestory.sg/wp-content/uploads/2019/11/59CAC7E4-3288-48CC-AE7C-7EE8AD9AAEC1-600x762.jpeg" 
-                            data-src="https://timestory.sg/wp-content/uploads/2019/11/59CAC7E4-3288-48CC-AE7C-7EE8AD9AAEC1-e1574915694231.jpeg" 
-                            data-large_image="https://timestory.sg/wp-content/uploads/2019/11/59CAC7E4-3288-48CC-AE7C-7EE8AD9AAEC1-e1574915694231.jpeg" data-large_image_width="800" data-large_image_height="1015" srcset="https://timestory.sg/wp-content/uploads/2019/11/59CAC7E4-3288-48CC-AE7C-7EE8AD9AAEC1-600x762.jpeg 600w, https://timestory.sg/wp-content/uploads/2019/11/59CAC7E4-3288-48CC-AE7C-7EE8AD9AAEC1-236x300.jpeg 236w, https://timestory.sg/wp-content/uploads/2019/11/59CAC7E4-3288-48CC-AE7C-7EE8AD9AAEC1-768x975.jpeg 768w, https://timestory.sg/wp-content/uploads/2019/11/59CAC7E4-3288-48CC-AE7C-7EE8AD9AAEC1-807x1024.jpeg 807w, 
-                            https://timestory.sg/wp-content/uploads/2019/11/59CAC7E4-3288-48CC-AE7C-7EE8AD9AAEC1-e1574915694231.jpeg 800w" 
-                            sizes="(max-width: 600px) 100vw, 600px" />
-                        
-                        </a>
-                        </div>
-
-
-                        <div data-thumb="https://timestory.sg/wp-content/uploads/2019/11/D61C436D-5B74-421C-8BF8-6B2E7A7DE444-100x100.jpeg" 
-                        data-thumb-alt="" class="woocommerce-product-gallery__image">
-                        
-                        <a href="https://timestory.sg/wp-content/uploads/2019/11/D61C436D-5B74-421C-8BF8-6B2E7A7DE444-e1574915745911.jpeg">
-
-                            <img width="600" height="534" src="https://timestory.sg/wp-content/uploads/2019/11/D61C436D-5B74-421C-8BF8-6B2E7A7DE444-600x534.jpeg" class="" alt="" title="D61C436D-5B74-421C-8BF8-6B2E7A7DE444"
-                            data-caption="" data-src="https://timestory.sg/wp-content/uploads/2019/11/D61C436D-5B74-421C-8BF8-6B2E7A7DE444-e1574915745911.jpeg" data-large_image="https://timestory.sg/wp-content/uploads/2019/11/D61C436D-5B74-421C-8BF8-6B2E7A7DE444-e1574915745911.jpeg" 
-                            data-large_image_width="800" data-large_image_height="712" srcset="https://timestory.sg/wp-content/uploads/2019/11/D61C436D-5B74-421C-8BF8-6B2E7A7DE444-600x534.jpeg 600w, https://timestory.sg/wp-content/uploads/2019/11/D61C436D-5B74-421C-8BF8-6B2E7A7DE444-300x267.jpeg 300w, https://timestory.sg/wp-content/uploads/2019/11/D61C436D-5B74-421C-8BF8-6B2E7A7DE444-768x683.jpeg 768w, https://timestory.sg/wp-content/uploads/2019/11/D61C436D-5B74-421C-8BF8-6B2E7A7DE444-1024x911.jpeg 1024w, https://timestory.sg/wp-content/uploads/2019/11/D61C436D-5B74-421C-8BF8-6B2E7A7DE444-e1574915745911.jpeg 800w" 
-                            sizes="(max-width: 600px) 100vw, 600px" />
-                        </a>
-                        </div>
-                        
-
-                        <div data-thumb="https://timestory.sg/wp-content/uploads/2019/11/039D8B30-9893-46B6-BFE8-924FF5B4B0ED-100x100.jpeg" 
-                        data-thumb-alt="" class="woocommerce-product-gallery__image">
-
-                        <a href="https://timestory.sg/wp-content/uploads/2019/11/039D8B30-9893-46B6-BFE8-924FF5B4B0ED-e1574915760927.jpeg">
-
-                            <img width="600" height="480" src="https://timestory.sg/wp-content/uploads/2019/11/039D8B30-9893-46B6-BFE8-924FF5B4B0ED-600x480.jpeg" class="" alt="" title="039D8B30-9893-46B6-BFE8-924FF5B4B0ED" 
-                            data-caption="" data-src="https://timestory.sg/wp-content/uploads/2019/11/039D8B30-9893-46B6-BFE8-924FF5B4B0ED-e1574915760927.jpeg" 
-                            data-large_image="https://timestory.sg/wp-content/uploads/2019/11/039D8B30-9893-46B6-BFE8-924FF5B4B0ED-e1574915760927.jpeg" data-large_image_width="800" data-large_image_height="640" srcset="https://timestory.sg/wp-content/uploads/2019/11/039D8B30-9893-46B6-BFE8-924FF5B4B0ED-600x480.jpeg 600w, https://timestory.sg/wp-content/uploads/2019/11/039D8B30-9893-46B6-BFE8-924FF5B4B0ED-300x240.jpeg 300w, https://timestory.sg/wp-content/uploads/2019/11/039D8B30-9893-46B6-BFE8-924FF5B4B0ED-768x615.jpeg 768w, https://timestory.sg/wp-content/uploads/2019/11/039D8B30-9893-46B6-BFE8-924FF5B4B0ED-1024x819.jpeg 1024w, https://timestory.sg/wp-content/uploads/2019/11/039D8B30-9893-46B6-BFE8-924FF5B4B0ED-e1574915760927.jpeg 800w" 
-                            sizes="(max-width: 600px) 100vw, 600px" />
-                        </a>
-                        </div>
-                        
-
-                        <div data-thumb="https://timestory.sg/wp-content/uploads/2019/11/2DAE220D-581B-4A1A-A165-7F64296BAD5C-100x100.jpeg" data-thumb-alt="" class="woocommerce-product-gallery__image">
-                            
-                        <a href="https://timestory.sg/wp-content/uploads/2019/11/2DAE220D-581B-4A1A-A165-7F64296BAD5C-e1574915776825.jpeg"><img width="600" height="443" src="https://timestory.sg/wp-content/uploads/2019/11/2DAE220D-581B-4A1A-A165-7F64296BAD5C-600x443.jpeg" class="" alt="" title="2DAE220D-581B-4A1A-A165-7F64296BAD5C" data-caption="" data-src="https://timestory.sg/wp-content/uploads/2019/11/2DAE220D-581B-4A1A-A165-7F64296BAD5C-e1574915776825.jpeg" data-large_image="https://timestory.sg/wp-content/uploads/2019/11/2DAE220D-581B-4A1A-A165-7F64296BAD5C-e1574915776825.jpeg" 
-                            data-large_image_width="800" data-large_image_height="590" 
-                            srcset="https://timestory.sg/wp-content/uploads/2019/11/2DAE220D-581B-4A1A-A165-7F64296BAD5C-600x443.jpeg 600w, https://timestory.sg/wp-content/uploads/2019/11/2DAE220D-581B-4A1A-A165-7F64296BAD5C-300x221.jpeg 300w, https://timestory.sg/wp-content/uploads/2019/11/2DAE220D-581B-4A1A-A165-7F64296BAD5C-768x567.jpeg 768w, https://timestory.sg/wp-content/uploads/2019/11/2DAE220D-581B-4A1A-A165-7F64296BAD5C-1024x756.jpeg 1024w, https://timestory.sg/wp-content/uploads/2019/11/2DAE220D-581B-4A1A-A165-7F64296BAD5C-e1574915776825.jpeg 800w" 
-                            sizes="(max-width: 600px) 100vw, 600px" />
-                        </a>
-
-                        </div>	
-                </figure>
-                </div>
-
-			</div>
-        </div>
         
-        
-    <!-- End of Image -->
 
-    <!-- Right hand side of product description-->
-    <div class="summary-product-wrap">
-        <div class="summary-product entry-summary">
-
-        <h1 itemprop="name" class="product_title entry-title p-font">Explorer II 216570</h1>
-        <p class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span></p>
-
-            <div class="product-single-short-description" itemprop="description">
-                
-                <div class="product-detail-top">
-
-                        <div class="product-detail-top">
-                            <h5>Available</h5>
-                            <h3>SGD 12,300</h3>
-                        </div>
-
-                        <div class="product-detail-options">
-                            <h5>CONDITION</h5>
-                            <h6>Unworn</h6>
-                            <h6>Complete full set, dated current 2019</h6>
-                        </div>
-                        
-                        <div class="product-detail-options">
-                            <h5>DIAL DESCRIPTION</h5>
-                            <p>Black</p>
-                        </div>
-
-                        <div class="product-detail-options">
-                            <h5>BEZEL</h5>
-                            <p>Fixed, 24-hour graduated</p>
-                        </div>
-
-                        <div class="product-detail-options">
-                            <h5>CASE</h5>
-                            <p>Oyster, 42 mm, Oystersteel</p>
-                        </div>
-
-                        <div class="product-detail-options">
-                            <h5>CASEBACK</h5>
-                            <p>Solid</p>
-                        </div>
-
-                        <div class="product-detail-options">
-                            <p><span style="color: #333333;font-size: 18px;font-weight: bold">MOVEMENT</span></p>
-                        </div>
-
-                        <div class="product-detail-options">
-                            <p>Perpetual, mechanical, self-winding</p>
-                        </div>
-
-                        <div class="product-detail-options">
-                            <h5>COMPLICATION</h5>
-                            <p>Centre hour, minute and seconds hands. 24-hour display. Second time zone with independent rapid-setting of the hour hand. Instantaneous date. Stop-seconds for precise time setting</p>
-                        </div>
-
-                        <div class="product-detail-options">
-                            <h5>BRACELET/STRAP</h5>
-                            <p>Oyster, flat three-piece links</p>
-                        </div>
-                            
-                        <div class="product-detail-options">
-                            <h5>CRYSTAL</h5>
-                            <p>Scratch-resistant sapphire, Cyclops lens over the date</p>
-                        </div>
-                </div>
-            </div>
-        </div> 
-    </div>
-
-</div>
-
-	
-	
-</div>
-</div>
-</div>            
-</div>
+  
+ 
     
-</main>
+    </style>
+</head>
 
 
-			
+<body>
+    
+    <!-- this div will give a gap of 30px -->
+    <div class="gap-30"></div>
+    <div class="gap-30"></div>
+
+    <div class="container">
+
+
+        <div class="row no-gutters">
 				
-<script type='text/javascript' src='https://timestory.sg/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.1.6'></script>
-<script type='text/javascript' src='https://timestory.sg/wp-content/plugins/woocommerce/assets/js/zoom/jquery.zoom.min.js?ver=1.7.21'></script>
-<script type='text/javascript' src='https://timestory.sg/wp-content/plugins/js_composer/assets/lib/bower/flexslider/jquery.flexslider-min.js?ver=6.1'></script>
-<script type='text/javascript' src='https://timestory.sg/wp-content/plugins/woocommerce/assets/js/photoswipe/photoswipe.min.js?ver=4.1.1'></script>
-<script type='text/javascript' src='https://timestory.sg/wp-content/plugins/woocommerce/assets/js/photoswipe/photoswipe-ui-default.min.js?ver=4.1.1'></script>
-<script type='text/javascript'>
-    /* <![CDATA[ */
-    var wc_single_product_params = {"i18n_required_rating_text":"Please select a rating","review_rating_required":"yes","flexslider":{"rtl":false,"animation":"slide","smoothHeight":true,"directionNav":false,"controlNav":"thumbnails","slideshow":false,"animationSpeed":500,"animationLoop":false,"allowOneSlide":false},"zoom_enabled":"1","zoom_options":[],"photoswipe_enabled":"1","photoswipe_options":{"shareEl":false,"closeOnScroll":false,"history":false,"hideAnimationDuration":0,"showAnimationDuration":0},"flexslider_enabled":"1"};
-    /* ]]> */
-</script>
+
+            <div class="col-md-6 no-gutters">
+                
+                
+                <div class="leftside d-flex justify-content-center align-items-center">
+                    
+                    <!-- Left Side -->
+
+                    
+                    <div class="watchimage img-hover-zoom img-hover-zoom--xyz">
+                        <img src="https://www.thewatchcompany.com/media/catalog/product/cache/7201a60ec3a4244a7d22fa59c65163e2/1/1/116610_20LN_1546998610.jpg" 
+                        alt="">
+                        
+                       
+                       
+                    </div>
+                    
+
+                 
+
+                 
+                    
+                    
+         
 
 
-<script type='text/javascript' src='https://timestory.sg/wp-content/plugins/woocommerce/assets/js/frontend/single-product.min.js?ver=3.8.1'></script>
+                    <!-- End of Left Side -->
+                </div>
+
+            </div>
+
+
+
+            <div class="col-md-6 no-gutters">
+                
+                <div class="rightside d-flex justify-content-center align-items-center">
+                    
+                    <!--Right side -->
+                    <div class="summary-product-wrap">
+                        <div class="summary-product entry-summary">
+
+                                <h1>Explorer II 216570</h1>
+
+                            <div class="product-single-short-description" itemprop="description">
+                                
+                                <div class="product-detail-top">
+
+                                <div class="product-detail-top">
+                                            <h5>Available</h5>
+                                            <h3>SGD 12,300</h3>
+                                </div>
+
+                                <div class="product-detail-options">
+                                    <h5>CONDITION</h5>
+                                    <h6>Unworn</h6>
+                                    <h6>Complete full set, dated current 2019</h6>
+                                </div>
+                                
+                                <div class="product-detail-options">
+                                    <h5>DIAL DESCRIPTION</h5>
+                                    <p>Black</p>
+                                </div>
+
+                                <div class="product-detail-options">
+                                    <h5>BEZEL</h5>
+                                    <p>Fixed, 24-hour graduated</p>
+                                </div>
+
+                                <div class="product-detail-options">
+                                    <h5>CASE</h5>
+                                    <p>Oyster, 42 mm, Oystersteel</p>
+                                </div>
+
+                                <div class="product-detail-options">
+                                    <h5>CASEBACK</h5>
+                                    <p>Solid</p>
+                                </div>
+
+
+                                <div class="product-detail-options">
+                                    <h5>MOVEMENT</h5>
+                                    <p>Perpetual, mechanical, self-winding</p>
+                                </div>
+
+                                <div class="product-detail-options">
+                                    <h5>COMPLICATION</h5>
+                                    <p>Centre hour, minute and seconds hands. 24-hour display. Second time zone with independent rapid-setting of the hour hand. Instantaneous date. Stop-seconds for precise time setting</p>
+                                </div>
+
+                                <div class="product-detail-options">
+                                    <h5>BRACELET/STRAP</h5>
+                                    <p>Oyster, flat three-piece links</p>
+                                </div>
+                                    
+                                <div class="product-detail-options">
+                                    <h5>CRYSTAL</h5>
+                                    <p>Scratch-resistant sapphire, Cyclops lens over the date</p>
+                                </div>
+
+                                </div>
+
+                            </div>
+
+                        </div> 
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+        </div>	
+            
+            
+            
+
+    </div>
+    <!-- End of the page BEFORE FOOTER-->
+
+
+    <div class="gap-30"></div>
 
 
 
 
-	
-					
+    
+
+
+
+
 </body>
-
 </html>
 
 {% endblock %}
