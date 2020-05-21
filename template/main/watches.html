@@ -89,6 +89,7 @@
           text-align: center;
         }
 
+        /* This css is for the sidebar hovering and dropping down functionalities when u hover over a brand */
         .dropdown-content {
           display: none;
           position:relative;
@@ -108,6 +109,7 @@
           object-fit: cover;
           width: 100%;
           height: 100%;
+        
         }
 
         .sidebarDropdown-content a:hover {background-color: #ddd;}
@@ -117,14 +119,11 @@
           height: 40px;
           text-decoration:wavy;
           font-size: 16px;
-          text-align: right;
-          width: 90%;
+          text-align: left;
           color: black;
         }
         
-      
-
-
+    
     </style>
 </head>
 
@@ -171,9 +170,14 @@
   <!--Main Catalogue-->
   <section class="text-center mb-4">
 
-    <div class="topBarNav"> 
-      Sort according to: Price | New
+  <div class="row">
+    <div class="col-lg-4 col-md-6 mb-4"></div> 
+    <div class="col-lg-4 col-md-6 mb-4"> 
+      <div class="topBarNav"> Sort watches according to: <a href="" style="color:blue"> Price </a> | 
+      <a href="" style="color:blue"> New </a> </div>
+
     </div>
+  </div>
 
 
     <!--Grid row-->
@@ -181,7 +185,6 @@
 
       <div class="col-lg-4 col-md-6 mb-4">
     
-
       <!-- Side bar navigation menu for all brands of watch -->
       <div class="col-lg-11 col-md-6 mb-4">
 
@@ -190,7 +193,7 @@
           All Brands
         </div>
         
-        <!-- Watch Dropdown Brand 1-->
+        <!-- Watch Dropdown Brand -->
         <div class="sidebarDropdown">
         <div class="sidebarWatchBrand"> A.Lange & Sohne </div>
           <div class="dropdown-content">
@@ -200,11 +203,11 @@
           </div>
         </div>
         <div class="gap-1"></div>
-        <!-- End of Watch Dropdown Brand 1-->
+        <!-- End of Watch Dropdown Brand -->
 
-        <!-- Watch Dropdown Brand 2-->
+        <!-- Watch Dropdown Brand -->
         <div class="sidebarDropdown">
-          <div class="sidebarWatchBrand"> Angelus </div>
+          <div class="sidebarWatchBrand"> Audemars Piguet </div>
             <div class="dropdown-content">
               <a href="">New</a>
               <a href="">Preowned</a> 
@@ -212,11 +215,11 @@
             </div>
         </div>
         <div class="gap-1"></div>
-        <!-- End of Watch Dropdown Brand 2-->
+        <!-- End of Watch Dropdown Brand -->
 
-        <!-- Watch Dropdown Brand 3-->
+        <!-- Watch Dropdown Brand -->
         <div class="sidebarDropdown">
-          <div class="sidebarWatchBrand"> Azimuth </div>
+          <div class="sidebarWatchBrand"> Cartier </div>
             <div class="dropdown-content">
               <a href="">New</a>
               <a href="">Preowned</a> 
@@ -224,11 +227,11 @@
             </div>
         </div>
         <div class="gap-1"></div>
-        <!-- End of Watch Dropdown Brand 3-->
+        <!-- End of Watch Dropdown Brand -->
 
-        <!-- Watch Dropdown Brand 4-->
+        <!-- Watch Dropdown Brand -->
         <div class="sidebarDropdown">
-          <div class="sidebarWatchBrand"> Breitling </div>
+          <div class="sidebarWatchBrand"> Hublot </div>
             <div class="dropdown-content">
               <a href="">New</a>
               <a href="">Preowned</a> 
@@ -236,10 +239,55 @@
             </div>
         </div>
         <div class="gap-1"></div>
-        <!-- End of Watch Dropdown Brand 4-->
+        <!-- End of Watch Dropdown Brand -->
 
+        <!-- Watch Dropdown Brand -->
+        <div class="sidebarDropdown">
+          <div class="sidebarWatchBrand"> Panerai </div>
+            <div class="dropdown-content">
+              <a href="">New</a>
+              <a href="">Preowned</a> 
+              <a href="">Sold</a> 
+            </div>
+        </div>
+        <div class="gap-1"></div>
+        <!-- End of Watch Dropdown Brand -->        
 
+        <!-- Watch Dropdown Brand -->
+        <div class="sidebarDropdown">
+          <div class="sidebarWatchBrand"> Patek Philippe </div>
+            <div class="dropdown-content">
+              <a href="">New</a>
+              <a href="">Preowned</a> 
+              <a href="">Sold</a> 
+            </div>
+        </div>
+        <div class="gap-1"></div>
+        <!-- End of Watch Dropdown Brand -->
 
+        <!-- Watch Dropdown Brand -->
+        <div class="sidebarDropdown">
+          <div class="sidebarWatchBrand"> Richard Mille </div>
+            <div class="dropdown-content">
+              <a href="">New</a>
+              <a href="">Preowned</a> 
+              <a href="">Sold</a> 
+            </div>
+        </div>
+        <div class="gap-1"></div>
+        <!-- End of Watch Dropdown Brand -->        
+
+        <!-- Watch Dropdown Brand -->
+        <div class="sidebarDropdown">
+          <div class="sidebarWatchBrand"> Rolex </div>
+            <div class="dropdown-content">
+              <a href="">New</a>
+              <a href="">Preowned</a> 
+              <a href="">Sold</a> 
+            </div>
+        </div>
+        <div class="gap-1"></div>
+        <!-- End of Watch Dropdown Brand -->        
 
       </div>
       <!-- End of side bar navigation menu for all brands of watches -->
