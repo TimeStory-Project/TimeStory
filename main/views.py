@@ -17,3 +17,8 @@ def watches(request):
     watches = Product.objects.all()
 
     return render(request, 'main/watches.html', {'watches': watches})
+
+
+#This is for the branch create-product-page to test how the inidividual watches will look. 
+def product(request):
+    return render(request, 'main/product.html')
