@@ -36,6 +36,11 @@
             height:100px;
             background-color: white;
         }
+        .gap-60 {
+            width:100%;
+            height:60px;
+            background-color: white;
+        }
 
 
  
@@ -188,7 +193,10 @@
             <div class="col-md-6 no-gutters">
                 
                 
+                <div class="gap-60"></div>
+                
                 <div class="leftside d-flex justify-content-center align-items-center">
+
                     
                     <!-- Left Side -->
 
@@ -205,7 +213,7 @@
                     <div class="watchimage img-hover-zoom img-hover-zoom--xyz">
                         <div id="slideshow">
 
-                            <img alt="slideshow" src="https://media.watchlink.sg/Products/5e34cb1ff6c8741b482d17ef/Aquanaut_1ODMaF.jpeg"  id="imgClickAndChange" height="500" width="500" />
+                            <img alt="slideshow" src="https://www.thewatchcompany.com/media/catalog/product/cache/7201a60ec3a4244a7d22fa59c65163e2/H/3/H32515535_1559578560.jpg"  id="imgClickAndChange" height="500" width="500" />
                            
 
                         </div>
@@ -226,17 +234,19 @@
                     </div>
 
                     <script>
-                        var imgs = ["https://media.watchlink.sg/Products/5e34cb1ff6c8741b482d17ef/Aquanaut_1ODMaF.jpeg", 
-                        "https://media.watchlink.sg/Products/5e34cb1ff6c8741b482d17ef/Aquanaut_20lq3I.jpeg" ,
-                         "https://media.watchlink.sg/Products/5e34cb1ff6c8741b482d17ef/Aquanaut_318jSy.jpeg",
-                         "https://media.watchlink.sg/Products/5e34cb1ff6c8741b482d17ef/Aquanaut_4Wf0Lp.jpeg"];
+                        var imgs = new Array ();
+                        imgs[0] = "https://www.thewatchcompany.com/media/catalog/product/cache/7201a60ec3a4244a7d22fa59c65163e2/H/3/H32515535_1559578560.jpg";
+                        imgs[1] = "https://www.thewatchcompany.com/media/catalog/product/cache/7201a60ec3a4244a7d22fa59c65163e2/I/W/IWC-Ingenieur-IW380701.jpg";
+                        imgs[2] = "https://media.watchlink.sg/Products/5e34cb1ff6c8741b482d17ef/Aquanaut_318jSy.jpeg";
+                        imgs[3] = "https://media.watchlink.sg/Products/5e34cb1ff6c8741b482d17ef/Aquanaut_4Wf0Lp.jpeg";
                     
                         function changeImage(dir) {
                             
                             var img = document.getElementById("imgClickAndChange");
 
                             if (dir == 1) { /** Handes the going forward button **/
-
+                                
+                                console.log(imgs.indexOf(img.src))
                                 if (imgs.indexOf(img.src) == imgs.length - 1) { /** When reach the last image, loop again **/
                                     img.src = imgs[0];
                                     console.log(imgs.indexOf(img.src))
