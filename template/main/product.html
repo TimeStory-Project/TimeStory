@@ -169,6 +169,10 @@
             width:20px;
             height:auto;
         }
+
+        .rightside {
+           
+        }
         
 
   
@@ -284,7 +288,7 @@
 
             <div class="col-md-6 no-gutters">
                 
-                <div class="rightside d-flex justify-content-center align-items-center">
+                <div class="rightside d-flex justify-content-left align-items-center">
                     
                     <!--Right side -->
                     <div class="summary-product-wrap">
@@ -297,14 +301,19 @@
                                 <div class="product-detail-top">
 
                                 <div class="product-detail-top">
-                                            <h5>Available</h5>
+                                            <p></p>
+                                            {% if individualWatch.availability == 1 %}
+                                                <h5>Available</h5>
+                                            {% else %}
+                                                <h5>Unavailable</h5>
+                                            {% endif %}
+                                            <p></p>
                                             <h3>SGD {{individualWatch.price}}</h3>
                                 </div>
 
                                 <div class="product-detail-options">
                                     <h5>CONDITION</h5>
                                     <h6>{{individualWatch.status}}</h6>
-                                    <h6>Complete full set, dated current 2019</h6>
                                 </div>
                                 
                                 <div class="product-detail-options">
@@ -344,8 +353,11 @@
                                 </div>
                                     
                                 <div class="product-detail-options">
-                                    <h5>CRYSTAL</h5>
-                                    <p>{{individualWatch.crystal}}</p>
+                                    {% if individualWatch.crystal != None %}
+                                        <h5>CRYSTAL</h5>
+                                        <p>{{individualWatch.crystal}}</p>
+                                    {% else %}
+                                    {% endif %}
                                 </div>
 
                                 </div>
