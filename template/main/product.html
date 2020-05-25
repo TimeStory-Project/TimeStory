@@ -212,8 +212,8 @@
 
                     <div class="watchimage img-hover-zoom img-hover-zoom--xyz">
                         <div id="slideshow">
-
-                            <img alt="slideshow" src="https://www.thewatchcompany.com/media/catalog/product/cache/7201a60ec3a4244a7d22fa59c65163e2/H/3/H32515535_1559578560.jpg"  id="imgClickAndChange" height="500" width="500" />
+                            
+                            <img alt="slideshow" src="{{individualWatch.mainImage.url}}"  id="imgClickAndChange" height="500" width="500" />
                            
 
                         </div>
@@ -290,7 +290,7 @@
                     <div class="summary-product-wrap">
                         <div class="summary-product entry-summary">
 
-                                <h1>Explorer II 216570</h1>
+                                <h1>{{individualWatch.model}}</h1>
 
                             <div class="product-single-short-description" itemprop="description">
                                 
@@ -298,54 +298,54 @@
 
                                 <div class="product-detail-top">
                                             <h5>Available</h5>
-                                            <h3>SGD 12,300</h3>
+                                            <h3>SGD {{individualWatch.price}}</h3>
                                 </div>
 
                                 <div class="product-detail-options">
                                     <h5>CONDITION</h5>
-                                    <h6>Unworn</h6>
+                                    <h6>{{individualWatch.status}}</h6>
                                     <h6>Complete full set, dated current 2019</h6>
                                 </div>
                                 
                                 <div class="product-detail-options">
                                     <h5>DIAL DESCRIPTION</h5>
-                                    <p>Black</p>
+                                    <p>{{individualWatch.dial_desp}}</p>
                                 </div>
 
                                 <div class="product-detail-options">
                                     <h5>BEZEL</h5>
-                                    <p>Fixed, 24-hour graduated</p>
+                                    <p>{{individualWatch.bezel}}</p>
                                 </div>
 
                                 <div class="product-detail-options">
                                     <h5>CASE</h5>
-                                    <p>Oyster, 42 mm, Oystersteel</p>
+                                    <p>{{individualWatch.caseback}}</p>
                                 </div>
 
                                 <div class="product-detail-options">
                                     <h5>CASEBACK</h5>
-                                    <p>Solid</p>
+                                    <p>{{individualWatch.caseback}}</p>
                                 </div>
 
 
                                 <div class="product-detail-options">
                                     <h5>MOVEMENT</h5>
-                                    <p>Perpetual, mechanical, self-winding</p>
+                                    <p>{{individualWatch.movement}}</p>
                                 </div>
 
                                 <div class="product-detail-options">
                                     <h5>COMPLICATION</h5>
-                                    <p>Centre hour, minute and seconds hands. 24-hour display. Second time zone with independent rapid-setting of the hour hand. Instantaneous date. Stop-seconds for precise time setting</p>
+                                    <p>{{individualWatch.complication}}</p>
                                 </div>
 
                                 <div class="product-detail-options">
                                     <h5>BRACELET/STRAP</h5>
-                                    <p>Oyster, flat three-piece links</p>
+                                    <p>{{individualWatch.buckle}}</p>
                                 </div>
                                     
                                 <div class="product-detail-options">
                                     <h5>CRYSTAL</h5>
-                                    <p>Scratch-resistant sapphire, Cyclops lens over the date</p>
+                                    <p>{{individualWatch.crystal}}</p>
                                 </div>
 
                                 </div>
@@ -382,6 +382,7 @@
 
 
 </body>
+
 </html>
 
 {% endblock %}

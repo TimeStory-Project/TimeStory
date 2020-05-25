@@ -335,7 +335,7 @@
             <div class="gap-1"></div>
             <div class="watchimage">
               <li class="crop">
-              <a href="product">
+              <a href="{% url 'product' pk=watch.pk %}">
               <img src="{{watch.mainImage.url}}"
               class="img-fluid img-resize"
                 alt="">
@@ -406,7 +406,7 @@
            
           <div class="watchimage">
             <li class="crop">
-            <a href="product">
+            <a href="{% url 'product' pk=watch.pk %}">
             <img src="{{watch.mainImage.url}}" class="img-fluid img.resize"
               alt="Responsive image">
             </a>
@@ -474,11 +474,10 @@
             <div class="gap-1"></div>
             <div class="watchimage">
               <li class="crop">
-              <a href="product">
+              <a href="{% url 'product' pk=watch.pk %}">
               <img src="{{watch.mainImage.url}}" 
               class="img-fluid"
                 alt="">
-              </a>  
               </li>
             </div>
           </div>
