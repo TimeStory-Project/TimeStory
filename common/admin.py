@@ -12,7 +12,7 @@ class ImageAdmin(admin.TabularInline):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('Name', 'availability', 'status')
+    list_display = ('Name', 'availability', 'updated_at')
     inlines = [ImageAdmin]
 
     class Meta:

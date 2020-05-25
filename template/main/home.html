@@ -156,27 +156,22 @@
     </div>
     
     <div class="col-lg-10 col-md-6 mb-8">
-   
-
         {% for watch in watches %}
-  
+
         {% if forloop.counter|modulo:4 == 1 %}
         <div class="row">
         {% endif %}
-        
+    
         {% if forloop.counter|modulo:4 == 1 %}
-  
         <!--Grid column First watch column-->
         <div class="col-lg-3 col-md-5 mb-4">
-          
           <!--Start of Card-->
           <div class="card">
-  
             <!--Card image-->
             <div class="view overlay">
               <div class="gap-1"></div>
               <div class="watchimage">
-                <img src="https://www.thewatchcompany.com/media/catalog/product/cache/7201a60ec3a4244a7d22fa59c65163e2/1/1/116610_20LN_1546998610.jpg" 
+                <img src="{{watch.mainImage.url}}" 
                 style="width:200px;height:230px;"
                   alt="">
               </div>
@@ -185,45 +180,22 @@
   
             <!--Card content-->
             <div class="card-body text-left">
-  
-              <a href="" class="wornstatus">
-                  {{watch.status}}
-              </a>
-  
+              <a href="" class="wornstatus">{{watch.status}}</a>
               <div class="gap-1"></div>
-  
-              <a href="" class="brand">
-                  {{watch.brand}}
-              </a>
-  
+              <a href="" class="brand">{{watch.brand}}</a>
               <div class="gap-small"></div>
-  
-              <a href="" class="model">
-                  {{watch.model}}
-              </a>
-  
+              <a href="" class="model">{{watch.model}}</a>
               <div class="gap-small"></div>
-  
-              <a href="" class="modelnumber">
-                  116613LB
-              </a>
-  
+              <a href="" class="modelnumber">116613LB</a>
               <div class="gap-1"></div>
-  
-              <a href="" class="price">
-                  ${{watch.price}}
-              </a>
-              
+              <a href="" class="price">${{watch.price}}</a>
               <hr>
-  
             </div>
             <!--Card content-->
-  
           </div>
           <!--End of Card-->
         </div>
         <!--End of first Grid column-->
-  
         {% elif forloop.counter|modulo:4 == 2 %}
   
         <!--Grid column Second watch column-->
