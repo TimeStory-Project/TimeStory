@@ -322,41 +322,66 @@
                                 </div>
 
                                 <div class="product-detail-options">
-                                    <h5>BEZEL</h5>
-                                    <p>{{individualWatch.bezel}}</p>
+                                    {% if individualWatch.bezel == '' %}
+
+                                    {% else %}
+                                        <h5>BEZEL</h5>
+                                        <p>{{individualWatch.bezel}}</p>
+                                    {% endif %}
                                 </div>
 
                                 <div class="product-detail-options">
-                                    <h5>CASE</h5>
-                                    <p>{{individualWatch.caseback}}</p>
+                                    {% if individualWatch.case == '' %}
+
+                                    {% else %}
+                                        <h5>CASE</h5>
+                                        <p>{{individualWatch.case}}</p>
+                                    {% endif %}
                                 </div>
 
                                 <div class="product-detail-options">
-                                    <h5>CASEBACK</h5>
-                                    <p>{{individualWatch.caseback}}</p>
+                                    {% if individualWatch.caseback == '' %}
+
+                                    {% else %}
+                                        <h5>CASEBACK</h5>
+                                        <p>{{individualWatch.caseback}}</p>
+                                    {% endif %}
                                 </div>
 
 
                                 <div class="product-detail-options">
-                                    <h5>MOVEMENT</h5>
-                                    <p>{{individualWatch.movement}}</p>
+                                    {% if individualWatch.movement == '' %}
+
+                                    {% else %}
+                                        <h5>MOVEMENT</h5>
+                                        <p>{{individualWatch.movement}}</p>
+                                    {% endif %}
                                 </div>
 
                                 <div class="product-detail-options">
-                                    <h5>COMPLICATION</h5>
-                                    <p>{{individualWatch.complication}}</p>
+                                    {% if individualWatch.complication == '' %}
+                                    
+                                    {% else %}
+                                        <h5>COMPLICATION</h5>
+                                        <p>{{individualWatch.complication}}</p>
+                                    {% endif %}
                                 </div>
 
                                 <div class="product-detail-options">
-                                    <h5>BRACELET/STRAP</h5>
-                                    <p>{{individualWatch.buckle}}</p>
+                                    {% if individualWatch.buckle == '' %}
+
+                                    {% else %}
+                                        <h5>BRACELET/STRAP</h5>
+                                        <p>{{individualWatch.buckle}}</p>
+                                    {% endif %}
                                 </div>
                                     
                                 <div class="product-detail-options">
-                                    {% if individualWatch.crystal != None %}
+                                    {% if individualWatch.crystal == '' %}
+                                        
+                                    {% else %}
                                         <h5>CRYSTAL</h5>
                                         <p>{{individualWatch.crystal}}</p>
-                                    {% else %}
                                     {% endif %}
                                 </div>
 
