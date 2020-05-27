@@ -36,6 +36,11 @@
             height:100px;
             background-color: white;
         }
+        .gap-60 {
+            width:100%;
+            height:60px;
+            background-color: white;
+        }
 
 
  
@@ -164,6 +169,10 @@
             width:20px;
             height:auto;
         }
+
+        .rightside {
+           
+        }
         
 
   
@@ -188,7 +197,10 @@
             <div class="col-md-6 no-gutters">
                 
                 
+                <div class="gap-60"></div>
+                
                 <div class="leftside d-flex justify-content-center align-items-center">
+
                     
                     <!-- Left Side -->
 
@@ -204,8 +216,8 @@
 
                     <div class="watchimage img-hover-zoom img-hover-zoom--xyz">
                         <div id="slideshow">
-
-                            <img alt="slideshow" src="https://media.watchlink.sg/Products/5e34cb1ff6c8741b482d17ef/Aquanaut_1ODMaF.jpeg"  id="imgClickAndChange" height="500" width="500" />
+                            
+                            <img alt="slideshow" src="{{individualWatch.mainImage.url}}"  id="imgClickAndChange" height="500" width="500" />
                            
 
                         </div>
@@ -226,17 +238,19 @@
                     </div>
 
                     <script>
-                        var imgs = ["https://media.watchlink.sg/Products/5e34cb1ff6c8741b482d17ef/Aquanaut_1ODMaF.jpeg", 
-                        "https://media.watchlink.sg/Products/5e34cb1ff6c8741b482d17ef/Aquanaut_20lq3I.jpeg" ,
-                         "https://media.watchlink.sg/Products/5e34cb1ff6c8741b482d17ef/Aquanaut_318jSy.jpeg",
-                         "https://media.watchlink.sg/Products/5e34cb1ff6c8741b482d17ef/Aquanaut_4Wf0Lp.jpeg"];
+                        var imgs = new Array ();
+                        imgs[0] = "https://www.thewatchcompany.com/media/catalog/product/cache/7201a60ec3a4244a7d22fa59c65163e2/H/3/H32515535_1559578560.jpg";
+                        imgs[1] = "https://www.thewatchcompany.com/media/catalog/product/cache/7201a60ec3a4244a7d22fa59c65163e2/I/W/IWC-Ingenieur-IW380701.jpg";
+                        imgs[2] = "https://media.watchlink.sg/Products/5e34cb1ff6c8741b482d17ef/Aquanaut_318jSy.jpeg";
+                        imgs[3] = "https://media.watchlink.sg/Products/5e34cb1ff6c8741b482d17ef/Aquanaut_4Wf0Lp.jpeg";
                     
                         function changeImage(dir) {
                             
                             var img = document.getElementById("imgClickAndChange");
 
                             if (dir == 1) { /** Handes the going forward button **/
-
+                                
+                                console.log(imgs.indexOf(img.src))
                                 if (imgs.indexOf(img.src) == imgs.length - 1) { /** When reach the last image, loop again **/
                                     img.src = imgs[0];
                                     console.log(imgs.indexOf(img.src))
@@ -274,68 +288,101 @@
 
             <div class="col-md-6 no-gutters">
                 
-                <div class="rightside d-flex justify-content-center align-items-center">
+                <div class="rightside d-flex justify-content-left align-items-center">
                     
                     <!--Right side -->
                     <div class="summary-product-wrap">
                         <div class="summary-product entry-summary">
 
-                                <h1>Explorer II 216570</h1>
+                                <h1>{{individualWatch.model}}</h1>
 
                             <div class="product-single-short-description" itemprop="description">
                                 
                                 <div class="product-detail-top">
 
                                 <div class="product-detail-top">
-                                            <h5>Available</h5>
-                                            <h3>SGD 12,300</h3>
+                                            <p></p>
+                                            {% if individualWatch.availability == 1 %}
+                                                <h5>Available</h5>
+                                            {% else %}
+                                                <h5>Unavailable</h5>
+                                            {% endif %}
+                                            <p></p>
+                                            <h3>SGD {{individualWatch.price}}</h3>
                                 </div>
 
                                 <div class="product-detail-options">
                                     <h5>CONDITION</h5>
-                                    <h6>Unworn</h6>
-                                    <h6>Complete full set, dated current 2019</h6>
+                                    <h6>{{individualWatch.status}}</h6>
                                 </div>
                                 
                                 <div class="product-detail-options">
                                     <h5>DIAL DESCRIPTION</h5>
-                                    <p>Black</p>
+                                    <p>{{individualWatch.dial_desp}}</p>
                                 </div>
 
                                 <div class="product-detail-options">
-                                    <h5>BEZEL</h5>
-                                    <p>Fixed, 24-hour graduated</p>
+                                    {% if individualWatch.bezel == '' %}
+
+                                    {% else %}
+                                        <h5>BEZEL</h5>
+                                        <p>{{individualWatch.bezel}}</p>
+                                    {% endif %}
                                 </div>
 
                                 <div class="product-detail-options">
-                                    <h5>CASE</h5>
-                                    <p>Oyster, 42 mm, Oystersteel</p>
+                                    {% if individualWatch.case == '' %}
+
+                                    {% else %}
+                                        <h5>CASE</h5>
+                                        <p>{{individualWatch.case}}</p>
+                                    {% endif %}
                                 </div>
 
                                 <div class="product-detail-options">
-                                    <h5>CASEBACK</h5>
-                                    <p>Solid</p>
+                                    {% if individualWatch.caseback == '' %}
+
+                                    {% else %}
+                                        <h5>CASEBACK</h5>
+                                        <p>{{individualWatch.caseback}}</p>
+                                    {% endif %}
                                 </div>
 
 
                                 <div class="product-detail-options">
-                                    <h5>MOVEMENT</h5>
-                                    <p>Perpetual, mechanical, self-winding</p>
+                                    {% if individualWatch.movement == '' %}
+
+                                    {% else %}
+                                        <h5>MOVEMENT</h5>
+                                        <p>{{individualWatch.movement}}</p>
+                                    {% endif %}
                                 </div>
 
                                 <div class="product-detail-options">
-                                    <h5>COMPLICATION</h5>
-                                    <p>Centre hour, minute and seconds hands. 24-hour display. Second time zone with independent rapid-setting of the hour hand. Instantaneous date. Stop-seconds for precise time setting</p>
+                                    {% if individualWatch.complication == '' %}
+                                    
+                                    {% else %}
+                                        <h5>COMPLICATION</h5>
+                                        <p>{{individualWatch.complication}}</p>
+                                    {% endif %}
                                 </div>
 
                                 <div class="product-detail-options">
-                                    <h5>BRACELET/STRAP</h5>
-                                    <p>Oyster, flat three-piece links</p>
+                                    {% if individualWatch.buckle == '' %}
+
+                                    {% else %}
+                                        <h5>BRACELET/STRAP</h5>
+                                        <p>{{individualWatch.buckle}}</p>
+                                    {% endif %}
                                 </div>
                                     
                                 <div class="product-detail-options">
-                                    <h5>CRYSTAL</h5>
-                                    <p>Scratch-resistant sapphire, Cyclops lens over the date</p>
+                                    {% if individualWatch.crystal == '' %}
+                                        
+                                    {% else %}
+                                        <h5>CRYSTAL</h5>
+                                        <p>{{individualWatch.crystal}}</p>
+                                    {% endif %}
                                 </div>
 
                                 </div>
@@ -372,6 +419,7 @@
 
 
 </body>
+
 </html>
 
 {% endblock %}
