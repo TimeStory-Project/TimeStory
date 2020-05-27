@@ -20,5 +20,6 @@ def watches(request):
 
 
 #This is for the branch create-product-page to test how the inidividual watches will look. 
-def product(request):
-    return render(request, 'main/product.html')
+def product(request,pk):
+    individualWatch = Product.objects.get (pk=pk)
+    return render(request, 'main/product.html', {'individualWatch':individualWatch})
