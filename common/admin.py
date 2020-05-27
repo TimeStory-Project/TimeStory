@@ -4,6 +4,8 @@ from django.contrib.auth.models import Group
 from django.utils.safestring import mark_safe
 from django.contrib.admin.widgets import AdminFileWidget
 from django.utils.translation import ugettext as _
+from django.db.models.functions import Concat
+from django.db.models import Value, CharField
 
 # ModelAdmin Class
 
@@ -37,11 +39,11 @@ class AdminImageWidget(AdminFileWidget):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('image_display', 'Name', 'condition', 'updated_at', )
+    list_display = ('image_display', 'brand', 'model', 'model_number', 'condition', 'updated_at', )
     search_fields = ('brand', 'model', 'model_number', 'condition')
     list_filter = ('brand', 'condition')
     inlines = [ImageAdmin]
-
+    
     # Show thumbnail in changeview
     def formfield_for_dbfield(self, db_field, **kwargs):
         if db_field.name == 'main_image':

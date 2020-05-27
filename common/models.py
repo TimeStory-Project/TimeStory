@@ -26,8 +26,7 @@ class Product(models.Model):
     model_number = models.CharField(max_length=100, default="")
     availability = models.BooleanField(default=True)
     price = models.IntegerField(default=0)
-    condition = models.CharField(
-        max_length=20, default="", choices=CONDITION_CHOICES)
+    condition = models.CharField(max_length=20, default="", choices=CONDITION_CHOICES)
     description = models.TextField(default="")
     dial_desp = models.CharField(max_length=100, default="", blank=True)
     bezel = models.TextField(default="", blank=True)
@@ -42,11 +41,14 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def Name(self):
-        return self.brand + " " + self.model
-
+    '''
+    def name(self):
+        return self.brand + " " + self.model + " " + self.model_number
+    name.short_description = 'name'
+    '''
+    
     def __str__(self):
-        return str(self.brand + " " + self.model)
+        return str(self.brand + " " + self.model + " " + self.model_number)
 
     def image_display(self):
         return mark_safe('<img src="%s" style="height:100px;" />' % self.main_image.url)
@@ -60,4 +62,4 @@ class ProductImage(models.Model):
     image = models.ImageField(upload_to='images/')
 
     def __str__(self):
-        return str(self.product.brand + " " + self.product.model)
+        return str(self.product.brand + " " + self.product.model + " " + self.product.model_number)
