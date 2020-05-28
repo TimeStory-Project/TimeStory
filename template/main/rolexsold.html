@@ -284,9 +284,9 @@
         <div class="sidebarDropdown">
           <div class="sidebarWatchBrand"> Richard Mille </div>
             <div class="dropdown-content">
-              <a href="richardmillenew">New</a>
-              <a href="richardmilleused">Preowned</a> 
-              <a href="richardmillesold">Sold</a> 
+                <a href="richardmillenew">New</a>
+                <a href="richardmilleused">Preowned</a> 
+                <a href="richardmillesold">Sold</a> 
             </div>
         </div>
         <div class="gap-1"></div>
@@ -315,6 +315,8 @@
    
 
       {% for watch in watches %}
+
+      
 
       {% if forloop.counter|modulo:3 == 1 %}
       <div class="row">
@@ -370,7 +372,7 @@
             <div class="gap-small"></div>
 
             <a href="" class="modelnumber">
-                {{watch.model_number}}
+              {{watch.model_number}}
             </a>
 
             <div class="gap-1"></div>
