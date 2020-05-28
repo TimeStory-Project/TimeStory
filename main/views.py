@@ -75,3 +75,20 @@ def patekphilippesold(request):
     return render(request, 'main/patekphilippenew.html' , {'watches':watches})
 
 
+
+
+def cartiernew(request):
+    watches = Product.objects.filter(brand="Cartier", condition="Brand new")
+ 
+    return render(request, 'main/cartiernew.html' , {'watches':watches})
+
+def cartierused(request):
+    watches = Product.objects.filter(brand="Cartier").filter(Q(condition="Used but good") | Q(condition="Used but worn"))
+    return render(request, 'main/cartierused.html' , {'watches':watches})
+
+def cartiersold(request):
+    watches = Product.objects.filter(brand="Cartier", condition="Sold")
+    return render(request, 'main/cartiernew.html' , {'watches':watches})
+
+
+
