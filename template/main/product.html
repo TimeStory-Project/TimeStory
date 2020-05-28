@@ -237,35 +237,54 @@
                         </div>
                     </div>
 
-                    <script>
+                    <script> //*"{{individualWatch.main_image.url}}" **/
+                        
+                        var currentIndex = 0;
                         var imgs = new Array ();
-                        imgs[0] = "https://www.thewatchcompany.com/media/catalog/product/cache/7201a60ec3a4244a7d22fa59c65163e2/H/3/H32515535_1559578560.jpg";
-                        imgs[1] = "https://www.thewatchcompany.com/media/catalog/product/cache/7201a60ec3a4244a7d22fa59c65163e2/I/W/IWC-Ingenieur-IW380701.jpg";
-                        imgs[2] = "https://www.thewatchcompany.com/media/catalog/product/cache/7201a60ec3a4244a7d22fa59c65163e2/3/0/301.SX.1170.RX_1561638474.jpg";
-                        imgs[3] = "https://www.thewatchcompany.com/media/catalog/product/cache/7201a60ec3a4244a7d22fa59c65163e2/3/0/301.SX.1170.RX_1561638468.jpg";
-                    
-                        function changeImage(dir) {
                             
+                        imgs[0] = '{{individualWatch.main_image.url}}';
+                        imgs[1] = "https://www.thewatchcompany.com/media/catalog/product/cache/7201a60ec3a4244a7d22fa59c65163e2/I/W/IWC-Ingenieur-IW380701.jpg";;
+                        imgs[2] = "https://media.watchlink.sg/Products/5e34cb1ff6c8741b482d17ef/Aquanaut_318jSy.jpeg";
+                        imgs[3] = "https://media.watchlink.sg/Products/5e34cb1ff6c8741b482d17ef/Aquanaut_4Wf0Lp.jpeg";
+
+    
+                        function changeImage(dir) {
+
+                        
                             var img = document.getElementById("imgClickAndChange");
 
-                            if (dir == 1) { /** Handes the going forward button **/
-                                
-                                console.log(imgs.indexOf(img.src))
-                                if (imgs.indexOf(img.src) == imgs.length - 1) { /** When reach the last image, loop again **/
+                            /**
+
+                            if (dir == 1) { 
+                            
+                                if (globalcounter == 3) { 
+                                 
                                     img.src = imgs[0];
-                                    console.log(imgs.indexOf(img.src))
 
                                 } else {
                                     img.src = imgs[imgs.indexOf(img.src) + (dir || 1)] || imgs[dir ? imgs.length - 1 : 0];
-                                    console.log(imgs.indexOf(img.src))
                                 }
 
-                            } else { /** Handles the going backward button **/
+                            } else { 
 
                                 img.src = imgs[imgs.indexOf(img.src) + (dir || 1)] || imgs[dir ? imgs.length - 1 : 0];
-                                    console.log(imgs.indexOf(img.src))
 
                             }
+                            **/
+
+                            var dir = dir || 1;
+                            var newIndex = currentIndex + dir;
+
+                            if (newIndex >= imgs.length) {
+                                newIndex = 0;
+                              } else if (newIndex < 0) {
+                                newIndex = imgs.length - 1;
+                              }
+                          
+                              currentIndex = newIndex;
+                            
+                            img.src = imgs[newIndex];
+
                         }
                     
                     </script>
