@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from common.models import Product
-
+from common.models import ProductImage
+from django.db.models import Q
 
 # Create your views here.
 def home(request):
@@ -22,11 +23,19 @@ def watches(request):
 #This is for the branch create-product-page to test how the inidividual watches will look. 
 def product(request,pk):
     individualWatch = Product.objects.get (pk=pk)
+    #photos = ProductImage.objects.get(image=individualWatch)
     return render(request, 'main/product.html', {'individualWatch':individualWatch})
 
 
 
 
-def rolex(request):
-    watches = Product.objects.filter(brand="Rolex")
-    return render(request, 'main/rolex.html' , {'watches':watches})
+def rolexnew(request):
+    watches = Product.objects.filter(brand="Rolex", condition="Brand new")
+ 
+    return render(request, 'main/rolexnew.html' , {'watches':watches})
+
+
+
+def rolexused(request):
+    watches = Product.objects.filter(brand="Rolex").filter(Q(condition="Used but good") | Q(condition="Used but worn"))
+    return render(request, 'main/rolexused.html' , {'watches':watches})

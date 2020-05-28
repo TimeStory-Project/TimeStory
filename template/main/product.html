@@ -227,7 +227,7 @@
                         <div class= "text-center">
 
                             <div class="btn-group">
-                      
+                            
                             <button type="button" class="btn btn-default" onclick="changeImage(-1)" style="background-color:rgb(145, 60, 57);"><img src=https://image.flaticon.com/icons/svg/126/126492.svg height="20" width="20">Previous Image</button>
                             <div class="dividerForButton"></div>
                             <button type="button" class="btn btn-default" onclick="changeImage(1)" style="background-color:rgb(30, 95, 95);"> Next Image <img src=https://image.flaticon.com/icons/svg/126/126490.svg height="20" width="20"></button>
@@ -235,6 +235,25 @@
                             </div>
 
                         </div>
+                        
+                        <!-- Tested for shixiong video on how to access multiple images
+                        <ol class="carousel-indicators">
+                        {% for p in photos %}
+                        
+                        <li data-target="#carousel-example-lz" data-slide-to="{{forloop.counter0}}" class="{% if forloop.counter0 == 0 %} active {% endif %}">
+                        </li>
+                        {% endfor %}
+                        </ol>
+                        
+                        <div class="carousel-inner" role="listbox">
+                        {% for p in photos %}
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="{{p.image.url}}">
+                        </div>
+                        {% endfor %}
+                         </div>
+                         -->
+
                     </div>
 
                     <script> //*"{{individualWatch.main_image.url}}" **/
