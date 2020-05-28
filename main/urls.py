@@ -7,4 +7,5 @@ urlpatterns = [
     path('contactus', views.contactus, name='contactus'),
     path('watches' , views.watches, name='watches'),
     path('<int:pk>/product', views.product, name='product'),
+    path('rolex' , views.rolex, name='rolex'),
 ]

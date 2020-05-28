@@ -23,3 +23,10 @@ def watches(request):
 def product(request,pk):
     individualWatch = Product.objects.get (pk=pk)
     return render(request, 'main/product.html', {'individualWatch':individualWatch})
+
+
+
+
+def rolex(request):
+    watches = Product.objects.filter(brand="Rolex")
+    return render(request, 'main/rolex.html' , {'watches':watches})
