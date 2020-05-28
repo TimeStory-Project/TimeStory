@@ -14,7 +14,7 @@ def contactus(request):
     return render(request, 'main/contactus.html')
 
 def watches(request):
-    #Ignore the redline under Product, it is ok. 
+
     watches = Product.objects.all()
 
     return render(request, 'main/watches.html', {'watches': watches})
@@ -33,7 +33,6 @@ def rolexnew(request):
     watches = Product.objects.filter(brand="Rolex", condition="Brand new")
  
     return render(request, 'main/rolexnew.html' , {'watches':watches})
-
 
 
 def rolexused(request):
