@@ -197,9 +197,11 @@
             <div class="view overlay">
               <div class="gap-1"></div>
               <div class="watchimage">
-                <img src="{{watch.mainImage.url}}" 
+               <a href="{% url 'product' pk=watch.pk %}"> 
+                <img src="{{watch.main_image.url}}" 
                 class="img-fluid"
                   alt="">
+                 </a> 
               </div>
             </div>
             <!--Card image-->
@@ -214,7 +216,7 @@
               <div class="gap-small"></div>
               <a href="" class="model">{{watch.model}}</a>
               <div class="gap-small"></div>
-              <a href="" class="modelnumber">116613LB</a>
+              <a href="" class="modelnumber">{{watch.model_number}}</a>
               <div class="gap-1"></div>
               <a href="" class="price">${{watch.price}}</a>
               <hr>
@@ -239,9 +241,11 @@
              <div class="gap-1"></div>
              
             <div class="watchimage">
-              <img src="{{watch.mainImage.url}}" 
+            <a href="{% url 'product' pk=watch.pk %}"> 
+              <img src="{{watch.main_image.url}}" 
               class="img-fluid"
                 alt="">
+             </a>   
             </div>
            </div>
            <!--Card image-->
@@ -270,7 +274,7 @@
              <div class="gap-small"></div>
   
              <a href="" class="modelnumber">
-                 116613LB
+                {{watch.model_number}}
              </a>
   
              <div class="gap-1"></div>
@@ -303,9 +307,11 @@
             <div class="view overlay">
               <div class="gap-1"></div>
               <div class="watchimage">
-                <img src="{{watch.mainImage.url}}" 
+                <a href="{% url 'product' pk=watch.pk %}">     
+                <img src="{{watch.main_image.url}}" 
                 class="img-fluid"
                   alt="">
+                </a>  
               </div>
             </div>
             <!--Card image-->
@@ -334,7 +340,7 @@
               <div class="gap-small"></div>
   
               <a href="" class="modelnumber">
-                  116613LB
+                {{watch.model_number}}
               </a>
   
               <div class="gap-1"></div>
@@ -367,9 +373,11 @@
           <div class="view overlay">
             <div class="gap-1"></div>
             <div class="watchimage">
-              <img src="{{watch.mainImage.url}}" 
+                <a href="{% url 'product' pk=watch.pk %}">   
+              <img src="{{watch.main_image.url}}" 
               class="img-fluid"
                 alt="">
+             </a>   
             </div>
           </div>
           <!--Card image-->
@@ -398,7 +406,7 @@
             <div class="gap-small"></div>
 
             <a href="" class="modelnumber">
-                116613LB
+                {{watch.model_number}}
             </a>
 
             <div class="gap-1"></div>
