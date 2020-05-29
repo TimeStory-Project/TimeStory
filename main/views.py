@@ -3,28 +3,62 @@ from common.models import Product
 from common.models import ProductImage
 from django.db.models import Q
 
+
 # Create your views here.
 def home(request):
-    watches = Product.objects.all()
-    return render(request, 'main/home.html', {'watches': watches})
+
+    #For search-bar trying to implement
+    query = ""
+    if request.GET:
+        query = request.GET['q']
+        queries = get_blog_queryset(query)
+        return render(request, "main/watches.html" , {'queries': queries})
+
+    else:
+        watches = Product.objects.all()
+        return render(request, 'main/home.html', {'watches': watches})
 
 
 def contactus(request):
 
-    return render(request, 'main/contactus.html')
+    #For search-bar trying to implement
+    query = ""
+    if request.GET:
+        query = request.GET['q']
+        queries = get_blog_queryset(query)
+        return render(request, "main/watches.html" , {'queries': queries})
+
+    else:
+        return render(request, 'main/contactus.html')
 
 def watches(request):
 
-    watches = Product.objects.all()
+    #For search-bar trying to implement
+    query = ""
+    if request.GET:
+        query = request.GET['q']
+        queries = get_blog_queryset(query)
+        return render(request, "main/watches.html" , {'queries': queries})
 
-    return render(request, 'main/watches.html', {'watches': watches})
+    else:
+        watches = Product.objects.all()
+        return render(request, 'main/watches.html', {'watches': watches})
 
 
 #This is for the branch create-product-page to test how the inidividual watches will look. 
 def product(request,pk):
-    individualWatch = Product.objects.get(pk=pk)
-    photos = ProductImage.objects.filter(product=individualWatch)
-    return render(request, 'main/product.html', {'individualWatch':individualWatch, 'photos':photos})
+
+    #For search-bar trying to implement
+    query = ""
+    if request.GET:
+        query = request.GET['q']
+        queries = get_blog_queryset(query)
+        return render(request, "main/watches.html" , {'queries': queries})
+
+    else: 
+        individualWatch = Product.objects.get(pk=pk)
+        photos = ProductImage.objects.filter(product=individualWatch)
+        return render(request, 'main/product.html', {'individualWatch':individualWatch, 'photos':photos})
 
 
 
@@ -88,5 +122,22 @@ def cartiersold(request):
     watches = Product.objects.filter(brand="Cartier", condition="Sold")
     return render(request, 'main/cartiernew.html' , {'watches':watches})
 
+
+
+def get_blog_queryset(query=None):
+    queryset = []
+    queries = query.split(" ") #Eg input rolex mariner, it will split into a list containing [rolex,mariner]
+    for q in queries:
+        posts = Product.objects.filter(
+                Q(brand__icontains=q) |
+                Q(model__icontains=q) |
+                Q(description__icontains=q) |
+                Q(model_number__icontains=q)
+            ).distinct()
+
+        for post in posts:
+            queryset.append(post)
+
+    return list(set(queryset))
 
 

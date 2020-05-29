@@ -57,6 +57,20 @@ input.search-box {
 
 }
 
+.search-icon {
+  padding-right: 10px;
+  padding-top: 5px;
+}
+
+.search-bar{
+  max-width: 500px;
+  width: 100%
+}
+
+form{
+  width:100%
+}
+
 </style>
 
 
@@ -83,8 +97,9 @@ input.search-box {
       </div>
     </div>
     
-    <div class="container col-3 justify-content-end">
+  <div class="container col-3 justify-content-end">
 
+  <!-- 
   <form action="search.php" method="post" class="index-search-form">
 
     <div class="paddedForSearchBox"><input name="search" type="text" class="search-box" placeholder="Search" style="outline:solid; background-color:#fff2b3; color:black;"></div>
@@ -96,12 +111,30 @@ input.search-box {
         alt="">
       </button>
 
+  -->
+
+  <form method = "get" class="index-search-form">
+   <input type="text" class="form-control" name="q" id="id_q" placeholder="Search...">
+
+    <button name="submit"  type="submit">
+     
+    <img src="https://image.flaticon.com/icons/svg/49/49116.svg" class="search-icon"
+   
+      alt="">
+
+  
+  </form>
+
     </div>
 
 </form>
 
 
-  </nav>
+</nav>
 
 
 </header>
+
+<script type="text/javascript">
+  document.getElementById("id_q").value = "{{query}}"
+</script>
