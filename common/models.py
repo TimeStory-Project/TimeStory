@@ -40,12 +40,6 @@ class Product(models.Model):
     main_image = models.ImageField(upload_to='images/')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
-    '''
-    def name(self):
-        return self.brand + " " + self.model + " " + self.model_number
-    name.short_description = 'name'
-    '''
     
     def __str__(self):
         return str(self.brand + " " + self.model + " " + self.model_number)
