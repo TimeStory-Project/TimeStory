@@ -309,7 +309,7 @@
 
     </div>
 
-
+      {% if watches %}
       <!--For the Main Catalougue-->
       <div class="col-lg-8 col-md-6 mb-8">
    
@@ -535,7 +535,237 @@
 
     {% endfor %}
       </div>
-       <!--End of the Main Catalougue-->
+      <!--End of the Main Catalougue-->
+      {% elif queries %} 
+
+      <div class="col-lg-8 col-md-6 mb-8">
+   
+
+        {% for watch in queries %}
+  
+        {% if forloop.counter|modulo:3 == 1 %}
+        <div class="row">
+        {% endif %}
+        
+        {% if forloop.counter|modulo:3 == 1 %}
+  
+        <!--Grid column First watch column-->
+        <div class="col-lg-3 col-md-5 mb-4">
+          
+          <!--Start of Card-->
+          <div class="card">
+  
+            <div class="gap-15"></div>
+  
+            <!--Card image  src="https://fossil.scene7.com/is/image/FossilPartners/FS5688_1?$sfcc_fos_hi-res$" -->
+            <div class="view overlay">
+              <div class="gap-1"></div>
+              <div class="watchimage">
+                <li class="crop">
+                <a href="{% url 'product' pk=watch.pk %}">
+                <img src="{{watch.main_image.url}}"
+                class="img-fluid img-resize"
+                  alt="">
+                </a>
+                </li>
+              </div>
+          
+            </div>
+            <!--Card image-->
+  
+            <div class="gap-15"></div>
+  
+            <!--Card content-->
+            <div class="card-body text-left">
+  
+              <a href="" class="wornstatus">
+                  {{watch.status}}
+              </a>
+  
+              <div class="gap-1"></div>
+  
+              <a href="" class="brand">
+                  {{watch.brand}}
+              </a>
+  
+              <div class="gap-small"></div>
+  
+              <a href="" class="model">
+                  {{watch.model}}
+              </a>
+  
+              <div class="gap-small"></div>
+  
+              <a href="" class="modelnumber">
+                  {{watch.model_number}}
+              </a>
+  
+              <div class="gap-1"></div>
+  
+              <a href="" class="price">
+                  ${{watch.price}}
+              </a>
+              
+              <hr>
+  
+            </div>
+            <!--Card content-->
+  
+          </div>
+          <!--End of Card-->
+        </div>
+        <!--End of first Grid column-->
+  
+        {% elif forloop.counter|modulo:3 == 2 %}
+  
+        <!--Grid column Second watch column-->
+        <div class="col-lg-3 col-md-5 mb-4">
+  
+          
+         <!--Start of Card-->
+         <div class="card">
+  
+          <div class="gap-15"></div>
+  
+           <!--Card image image is 224x400-->
+           <div class="view overlay">
+             <div class="gap-1"></div>
+             
+            <div class="watchimage">
+              <li class="crop">
+              <a href="{% url 'product' pk=watch.pk %}">
+              <img src="{{watch.main_image.url}}" class="img-fluid img.resize"
+                alt="Responsive image">
+              </a>
+              </li>
+              </div>
+           
+           </div>
+           <!--Card image-->
+          
+           <div class="gap-15"></div>
+  
+           <!--Card content-->
+           <div class="card-body text-left">
+  
+             <a href="" class="wornstatus">
+                 {{watch.status}}
+             </a>
+  
+             <div class="gap-1"></div>
+  
+             <a href="" class="brand">
+                 {{watch.brand}}
+             </a>
+  
+             <div class="gap-small"></div>
+  
+             <a href="" class="model">
+                 {{watch.model}}
+             </a>
+  
+             <div class="gap-small"></div>
+  
+             <a href="" class="modelnumber">
+              {{watch.model_number}}
+             </a>
+  
+             <div class="gap-1"></div>
+  
+             <a href="" class="price">
+                 ${{watch.price}}
+             </a>
+             
+             <hr>
+  
+           </div>
+           <!--Card content-->
+  
+         </div>
+         <!--End of Card-->
+       </div>
+       <!--End of Second Grid column-->
+  
+       {% elif forloop.counter|modulo:3 == 0 %}
+  
+        <!--Grid column Third watch column-->
+        <div class="col-lg-3 col-md-5 mb-4">
+          
+          <!--Start of Card-->
+          <div class="card">
+  
+            <div class="gap-15"></div>
+  
+            <!--Card image style="width:200px;height:230px;"-->
+            <div class="view overlay">
+              <div class="gap-1"></div>
+              <div class="watchimage">
+                <li class="crop">
+                <a href="{% url 'product' pk=watch.pk %}">
+                <img src="{{watch.main_image.url}}" 
+                class="img-fluid"
+                  alt="">
+                </li>
+              </div>
+            </div>
+            <!--Card image-->
+  
+            <div class="gap-15"></div>
+  
+            <!--Card content-->
+            <div class="card-body text-left">
+  
+              <a href="" class="wornstatus">
+                  {{watch.status}}
+              </a>
+  
+              <div class="gap-1"></div>
+  
+              <a href="" class="brand">
+                  {{watch.brand}}
+              </a>
+  
+              <div class="gap-small"></div>
+  
+              <a href="" class="model">
+                  {{watch.model}}
+              </a>
+  
+              <div class="gap-small"></div>
+  
+              <a href="" class="modelnumber">
+                {{watch.model_number}}
+              </a>
+  
+              <div class="gap-1"></div>
+  
+              <a href="" class="price">
+                  ${{watch.price}}
+              </a>
+              
+              <hr>
+  
+            </div>
+            <!--Card content-->
+  
+          </div>
+          <!--End of Card-->
+        </div>
+       <!--End of Third Grid column-->
+  
+      {% endif %}
+  
+      {% if forloop.counter|modulo:3 == 0  %}
+      </div> <!-- This div is for the row-->
+      {% endif %}
+  
+  
+      {% endfor %}
+      </div>
+
+      {% else %}
+        <h5>No search result found</h5>
+      {% endif %}
 
 
     </div>
