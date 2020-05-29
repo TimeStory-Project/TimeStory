@@ -104,9 +104,9 @@
         }
 
         .img-fluid {
-            max-width: 95%;
-            height: auto;
-       
+          object-fit: cover;
+          width: 100%;
+          height: 300px;
         }
 
         .card {
@@ -189,20 +189,14 @@
         <!--Grid column First watch column-->
         <div class="col-lg-3 col-md-5 mb-4">
           <!--Start of Card-->
-          <div class="card">
-
-            <div class="gap-15"></div>
-  
+          <div class="card">  
             <!--Card image-->
             <div class="view overlay">
-              <div class="gap-1"></div>
-              <div class="watchimage">
-               <a href="{% url 'product' pk=watch.pk %}"> 
-                <img src="{{watch.main_image.url}}" 
-                class="img-fluid"
-                  alt="">
-                 </a> 
-              </div>
+                <div class="watchimage">
+                  <a href="{% url 'product' pk=watch.pk %}"> 
+                    <img src="{{watch.main_image.url}}" class="img-fluid" alt="">
+                  </a> 
+                </div>
             </div>
             <!--Card image-->
 
@@ -234,18 +228,14 @@
          <!--Start of Card-->
          <div class="card">
 
-            <div class="gap-15"></div>
 
            <!--Card image-->
            <div class="view overlay">
-             <div class="gap-1"></div>
              
             <div class="watchimage">
-            <a href="{% url 'product' pk=watch.pk %}"> 
-              <img src="{{watch.main_image.url}}" 
-              class="img-fluid"
-                alt="">
-             </a>   
+              <a href="{% url 'product' pk=watch.pk %}"> 
+                <img src="{{watch.main_image.url}}" class="img-fluid" alt="">
+              </a>   
             </div>
            </div>
            <!--Card image-->
@@ -301,11 +291,9 @@
           <!--Start of Card-->
           <div class="card">
             
-            <div class="gap-15"></div>
 
             <!--Card image-->
             <div class="view overlay">
-              <div class="gap-1"></div>
               <div class="watchimage">
                 <a href="{% url 'product' pk=watch.pk %}">     
                 <img src="{{watch.main_image.url}}" 
@@ -367,11 +355,8 @@
         <!--Start of Card-->
         <div class="card">
 
-            <div class="gap-15"></div>  
-
           <!--Card image-->
           <div class="view overlay">
-            <div class="gap-1"></div>
             <div class="watchimage">
                 <a href="{% url 'product' pk=watch.pk %}">   
               <img src="{{watch.main_image.url}}" 
