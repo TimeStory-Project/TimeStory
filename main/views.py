@@ -22,16 +22,14 @@ def watches(request):
 
 #This is for the branch create-product-page to test how the inidividual watches will look. 
 def product(request,pk):
-    individualWatch = Product.objects.get (pk=pk)
-    #photos = ProductImage.objects.get(image=individualWatch)
-    return render(request, 'main/product.html', {'individualWatch':individualWatch})
-
+    individualWatch = Product.objects.get(pk=pk)
+    photos = ProductImage.objects.filter(product=individualWatch)
+    return render(request, 'main/product.html', {'individualWatch':individualWatch, 'photos':photos})
 
 
 
 def rolexnew(request):
     watches = Product.objects.filter(brand="Rolex", condition="Brand new")
- 
     return render(request, 'main/rolexnew.html' , {'watches':watches})
 
 def rolexused(request):

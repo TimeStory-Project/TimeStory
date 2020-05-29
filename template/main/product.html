@@ -189,45 +189,24 @@
     <div class="gap-30"></div>
 
     <div class="container">
-
-
         <div class="row no-gutters">
-				
-
             <div class="col-md-6 no-gutters">
-                
-                
                 <div class="gap-60"></div>
-                
-                <div class="leftside d-flex justify-content-center align-items-center">
-
-                    
+                    <div class="leftside d-flex justify-content-center align-items-center">
                     <!-- Left Side -->
-
                     <!-- 
                     <div class="watchimage img-hover-zoom img-hover-zoom--xyz">
                         <img src="https://www.thewatchcompany.com/media/catalog/product/cache/7201a60ec3a4244a7d22fa59c65163e2/1/1/116610_20LN_1546998610.jpg" 
                         alt="">
-                        
-                       
                     </div>
-
                     -->
-
                     <div class="watchimage img-hover-zoom img-hover-zoom--xyz">
                         <div id="slideshow">
-                            
                             <img alt="slideshow" src="{{individualWatch.main_image.url}}"  id="imgClickAndChange" height="500" width="500" />
-                           
-
                         </div>
-
                         <div class="gap-30"></div>
-
                         <div class= "text-center">
-
                             <div class="btn-group">
-                            
                             <button type="button" class="btn btn-default" onclick="changeImage(-1)" style="background-color:rgb(145, 60, 57);"><img src=https://image.flaticon.com/icons/svg/126/126492.svg height="20" width="20">Previous Image</button>
                             <div class="dividerForButton"></div>
                             <button type="button" class="btn btn-default" onclick="changeImage(1)" style="background-color:rgb(30, 95, 95);"> Next Image <img src=https://image.flaticon.com/icons/svg/126/126490.svg height="20" width="20"></button>
@@ -259,17 +238,16 @@
                     <script> //*"{{individualWatch.main_image.url}}" **/
                         
                         var currentIndex = 0;
-                        var imgs = new Array ();
+                        var imgs = [];
                             
-                        imgs[0] = '{{individualWatch.main_image.url}}';
-                        imgs[1] = "https://www.thewatchcompany.com/media/catalog/product/cache/7201a60ec3a4244a7d22fa59c65163e2/I/W/IWC-Ingenieur-IW380701.jpg";;
-                        imgs[2] = "https://media.watchlink.sg/Products/5e34cb1ff6c8741b482d17ef/Aquanaut_318jSy.jpeg";
-                        imgs[3] = "https://media.watchlink.sg/Products/5e34cb1ff6c8741b482d17ef/Aquanaut_4Wf0Lp.jpeg";
+                        imgs.push('{{individualWatch.main_image.url}}');
 
-    
+                        {% for p in photos %}
+                            imgs.push('{{p.image.url}}')
+                        {% endfor %}
+                            
                         function changeImage(dir) {
 
-                        
                             var img = document.getElementById("imgClickAndChange");
 
                             /**
@@ -293,36 +271,18 @@
 
                             var dir = dir || 1;
                             var newIndex = currentIndex + dir;
-
                             if (newIndex >= imgs.length) {
                                 newIndex = 0;
                               } else if (newIndex < 0) {
                                 newIndex = imgs.length - 1;
                               }
-                          
                               currentIndex = newIndex;
-                            
                             img.src = imgs[newIndex];
-
                         }
-                    
                     </script>
-                    
-
-                 
-
-                 
-                    
-                    
-         
-
-
                     <!-- End of Left Side -->
                 </div>
-
             </div>
-
-
 
             <div class="col-md-6 no-gutters">
                 
