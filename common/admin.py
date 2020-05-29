@@ -40,6 +40,7 @@ class AdminImageWidget(AdminFileWidget):
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('image_display', 'brand', 'model', 'model_number', 'condition', 'updated_at', )
+    list_display_links = ('image_display', 'brand', 'model', 'model_number', 'condition', )
     search_fields = ('brand', 'model', 'model_number', 'condition')
     list_filter = ('brand', 'condition')
     inlines = [ImageAdmin]
