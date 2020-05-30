@@ -124,6 +124,21 @@ def cartiersold(request):
 
 
 
+def audemarspiguetnew(request):
+    watches = Product.objects.filter(brand="Audemars Piguet", condition="Brand new")
+ 
+    return render(request, 'main/audemarspiguetnew.html' , {'watches':watches})
+
+def audemarspiguetused(request):
+    watches = Product.objects.filter(brand="Audemars Piguet").filter(Q(condition="Used but good") | Q(condition="Used but worn"))
+    return render(request, 'main/audemarspiguetused.html' , {'watches':watches})
+
+def audemarspiguetsold(request):
+    watches = Product.objects.filter(brand="Audemars Piguet", condition="Sold")
+    return render(request, 'main/audemarspiguetnew.html' , {'watches':watches})    
+
+
+
 def get_blog_queryset(query=None):
     queryset = []
     queries = query.split(" ") #Eg input rolex mariner, it will split into a list containing [rolex,mariner]

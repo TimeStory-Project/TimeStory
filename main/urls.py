@@ -22,5 +22,9 @@ urlpatterns = [
 
     path('cartiernew' , views.cartiernew, name='cartiernew'),
     path('cartierused', views.cartierused, name='cartierused'),
-    path('cartiersold', views.cartiersold, name='cartiersold')
+    path('cartiersold', views.cartiersold, name='cartiersold'),
+
+    path('audemarspiguetnew' , views.audemarspiguetnew, name='audemarspiguetnew'),
+    path('audemarspiguetused', views.audemarspiguetused, name='audemarspiguetused'),
+    path('audemarspiguetsold', views.audemarspiguetsold, name='audemarspiguetsold')
 ]
