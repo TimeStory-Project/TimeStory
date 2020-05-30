@@ -45,8 +45,14 @@ def watches(request):
         return render(request, "main/watches.html" , {'queries': queries, 'page':page})
 
     else:
-        watches = Product.objects.all()
-        return render(request, 'main/watches.html', {'watches': watches, 'page':page})
+        #if request.POST['price'] == "sortbyprice":
+         #   watches = Product.objects.all()
+          #  watches = watches.order_by('price')
+           # return render(request, 'main/watches.html', {'watches': watches, 'page':page})
+
+        #else:     
+            watches = Product.objects.all()
+            return render(request, 'main/watches.html', {'watches': watches, 'page':page})
 
 
 #This is for the branch create-product-page to test how the inidividual watches will look. 
