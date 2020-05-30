@@ -114,6 +114,15 @@
             height: 100%; 
             object-fit: fill;
            }
+
+        .detail:hover .brand, .detail:hover .model, .detail:hover .modelnumber, .detail:hover .condition  {
+          color: #e4cc54;
+        }
+
+        .card:hover, .card:hover hr {
+           border-color: #e4cc54;
+         }
+
         
     
     </style>
@@ -206,19 +215,23 @@
             <div class="gap-15"></div>
   
             <!--Card content-->
-            <div class="card-body text-left">
-              <a href="" class="wornstatus">{{watch.status}}</a>
+            <div class="card-body text-left">           
+              <div>
+                <a href="{% url 'product' pk=watch.pk %}" class="detail">
+                  <span class="brand">{{watch.brand}}<br></span>
+                  <span class="model">{{watch.model}}<br></span>
+                  <span class="modelnumber">{{watch.model_number}}<br></span>
+                  <span class="condition">{{watch.condition}}</span>
+                </a>
+              </div>
               <div class="gap-1"></div>
-              <a href="" class="brand">{{watch.brand}}</a>
-              <div class="gap-small"></div>
-              <a href="" class="model">{{watch.model}}</a>
-              <div class="gap-small"></div>
-              <a href="" class="modelnumber">{{watch.model_number}}</a>
-              <div class="gap-1"></div>
-              <a href="" class="price">${{watch.price}}</a>
+              <span class="price">
+                  ${{watch.price}}
+              </span>
               <hr>
             </div>
             <!--Card content-->
+            
           </div>
           <!--End of Card-->
         </div>
@@ -246,40 +259,22 @@
            <div class="gap-15"></div>
 
            <!--Card content-->
-           <div class="card-body text-left">
-  
-             <a href="" class="wornstatus">
-                 {{watch.status}}
-             </a>
-  
-             <div class="gap-1"></div>
-  
-             <a href="" class="brand">
-                 {{watch.brand}}
-             </a>
-  
-             <div class="gap-small"></div>
-  
-             <a href="" class="model">
-                 {{watch.model}}
-             </a>
-  
-             <div class="gap-small"></div>
-  
-             <a href="" class="modelnumber">
-                {{watch.model_number}}
-             </a>
-  
-             <div class="gap-1"></div>
-  
-             <a href="" class="price">
-                 ${{watch.price}}
-             </a>
-             
-             <hr>
-  
-           </div>
-           <!--Card content-->
+            <div class="card-body text-left">           
+              <div>
+                <a href="{% url 'product' pk=watch.pk %}" class="detail">
+                  <span class="brand">{{watch.brand}}<br></span>
+                  <span class="model">{{watch.model}}<br></span>
+                  <span class="modelnumber">{{watch.model_number}}<br></span>
+                  <span class="condition">{{watch.condition}}</span>
+                </a>
+              </div>
+              <div class="gap-1"></div>
+              <span class="price">
+                  ${{watch.price}}
+              </span>
+              <hr>
+            </div>
+            <!--Card content-->
   
          </div>
          <!--End of Card-->
@@ -310,38 +305,20 @@
             <div class="gap-15"></div>
   
             <!--Card content-->
-            <div class="card-body text-left">
-  
-              <a href="" class="wornstatus">
-                  {{watch.status}}
-              </a>
-  
+            <div class="card-body text-left">           
+              <div>
+                <a href="{% url 'product' pk=watch.pk %}" class="detail">
+                  <span class="brand">{{watch.brand}}<br></span>
+                  <span class="model">{{watch.model}}<br></span>
+                  <span class="modelnumber">{{watch.model_number}}<br></span>
+                  <span class="condition">{{watch.condition}}</span>
+                </a>
+              </div>
               <div class="gap-1"></div>
-  
-              <a href="" class="brand">
-                  {{watch.brand}}
-              </a>
-  
-              <div class="gap-small"></div>
-  
-              <a href="" class="model">
-                  {{watch.model}}
-              </a>
-  
-              <div class="gap-small"></div>
-  
-              <a href="" class="modelnumber">
-                {{watch.model_number}}
-              </a>
-  
-              <div class="gap-1"></div>
-  
-              <a href="" class="price">
+              <span class="price">
                   ${{watch.price}}
-              </a>
-              
+              </span>
               <hr>
-  
             </div>
             <!--Card content-->
   
@@ -373,40 +350,22 @@
           <div class="gap-15"></div>
 
           <!--Card content-->
-          <div class="card-body text-left">
-
-            <a href="" class="wornstatus">
-                {{watch.status}}
-            </a>
-
-            <div class="gap-1"></div>
-
-            <a href="" class="brand">
-                {{watch.brand}}
-            </a>
-
-            <div class="gap-small"></div>
-
-            <a href="" class="model">
-                {{watch.model}}
-            </a>
-
-            <div class="gap-small"></div>
-
-            <a href="" class="modelnumber">
-                {{watch.model_number}}
-            </a>
-
-            <div class="gap-1"></div>
-
-            <a href="" class="price">
-                ${{watch.price}}
-            </a>
-            
-            <hr>
-
-          </div>
-          <!--Card content-->
+            <div class="card-body text-left">           
+              <div>
+                <a href="{% url 'product' pk=watch.pk %}" class="detail">
+                  <span class="brand">{{watch.brand}}<br></span>
+                  <span class="model">{{watch.model}}<br></span>
+                  <span class="modelnumber">{{watch.model_number}}<br></span>
+                  <span class="condition">{{watch.condition}}</span>
+                </a>
+              </div>
+              <div class="gap-1"></div>
+              <span class="price">
+                  ${{watch.price}}
+              </span>
+              <hr>
+            </div>
+            <!--Card content-->
 
         </div>
         <!--End of Card-->
