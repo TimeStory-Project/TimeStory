@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '+becoja0%$^+dkqn=bm)mc_7agw8a3ma=bn-)a#0m(3b%&gg(g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['timestorysg.herokuapp.com', '127.0.0.1']
 
