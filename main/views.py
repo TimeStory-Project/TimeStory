@@ -41,9 +41,20 @@ def watches(request):
     page = 'watches'
     if request.GET:
 
-        query = request.GET['q']
-        queries = get_blog_queryset(query)
-        return render(request, "main/watches.html" , {'queries': queries, 'page':page})
+        if request.GET['price'] == 'price':
+            watches = Product.objects.all()
+            watches = watches.order_by('price')
+            return render(request, 'main/watches.html', {'watches': watches, 'page':page})
+    
+        elif request.GET['price'] == 'new':
+            watches = Product.objects.all()
+            watches = watches.order_by('-created_at')
+            return render(request, 'main/watches.html', {'watches': watches, 'page':page})
+
+        else: #this is for the search
+            query = request.GET['q']
+            queries = get_blog_queryset(query)
+            return render(request, "main/watches.html" , {'queries': queries, 'page':page})
 
     elif request.POST:
         if request.POST['price'] == 'price':
