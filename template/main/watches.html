@@ -220,7 +220,7 @@
     <div class="col-lg-4 col-md-6 mb-4"></div> 
     <div class="col-lg-4 col-md-6 mb-4"> 
       
-      <form method = "post">
+      <form method = "get">
       <div class="topBarNav"> Sort watches according to: 
 
         {% csrf_token %}
@@ -766,7 +766,7 @@
       </div>
 
       {% else %}
-        <h5>No search result found</h5>
+          <h5>No search result found</h5>
       {% endif %}
 
 
