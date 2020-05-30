@@ -40,13 +40,8 @@
 
   input.search-box {
     padding-left: 10px;
-    width: 250px;
+    width: 200px;
     font-family: FontAwesome;
-  }
-
-  .search-icon {
-    padding-right: 10px;
-    padding-top: 5px;
   }
 
   .search-bar{
@@ -55,7 +50,7 @@
   }
 
   form{
-    width:100%
+    width:60%
   }
 
   .para {
@@ -91,11 +86,32 @@
 
   }
 
+  input[type=text]:focus {
+    outline: none !important;
+    box-shadow: 0 0 10px #e4cc54;
+  }
+
+  input[type=text]:focus + search-icon {
+    font-size:16px;
+    color:#e4cc54;
+  }
+
+  .icon {
+    padding-right: 10px;
+    padding-top: 5px;
+    font-size:24px
+  }
+
+  .icon:hover {
+    color:#e4cc54;
+  }
+  
+
 </style>
 
 
 <header>
-  <nav class="navbar navbar-light navbar-expand-md bg-light justify-content-center fixed-top">
+  <nav class="navbar navbar-light navbar-expand-lg bg-light justify-content-center fixed-top">
     <a href="../" class="navbar-brand d-flex w-50 mr-auto"><img src="{% static 'image/logo.png' %}" height="60"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
         <span class="navbar-toggler-icon"></span>
@@ -117,7 +133,7 @@
           <form method = "get" class="index-search-form">
             <input type="text" class="form-control" name="q" id="id_q" placeholder="Search...">
             <button name="submit"  type="submit">
-            <img src="https://image.flaticon.com/icons/svg/49/49116.svg" class="search-icon"alt="">
+            <i class="icon fa fa-search"></i>
           </form>
       </div>
 

@@ -6,7 +6,6 @@ from django.db.models import Q
 
 # Create your views here.
 def home(request):
-
     #For search-bar trying to implement
     query = ""
     page = 'home'
@@ -22,7 +21,6 @@ def home(request):
 
 
 def contactus(request):
-
     #For search-bar trying to implement
     query = ""
     page = 'contactus'
@@ -35,34 +33,20 @@ def contactus(request):
         return render(request, 'main/contactus.html', {'page':page})
 
 def watches(request):
-
     #For search-bar trying to implement
-    query = ""
     page = 'watches'
     if request.GET:
-
-        if request.GET['price'] == 'price':
-            watches = Product.objects.all()
-            watches = watches.order_by('price')
-            return render(request, 'main/watches.html', {'watches': watches, 'page':page})
-    
-        elif request.GET['price'] == 'new':
-            watches = Product.objects.all()
-            watches = watches.order_by('-created_at')
-            return render(request, 'main/watches.html', {'watches': watches, 'page':page})
-
-        else: #this is for the search
+        if 'q' in request.GET: #this is for the search
             query = request.GET['q']
             queries = get_blog_queryset(query)
             return render(request, "main/watches.html" , {'queries': queries, 'page':page})
 
-    elif request.POST:
-        if request.POST['price'] == 'price':
+        elif 'price' in request.GET:
             watches = Product.objects.all()
             watches = watches.order_by('price')
             return render(request, 'main/watches.html', {'watches': watches, 'page':page})
     
-        elif request.POST['price'] == 'new':
+        elif 'new' in request.GET:
             watches = Product.objects.all()
             watches = watches.order_by('-created_at')
             return render(request, 'main/watches.html', {'watches': watches, 'page':page})
@@ -71,17 +55,14 @@ def watches(request):
             watches = Product.objects.all()
             return render(request, 'main/watches.html', {'watches': watches, 'page':page})
 
-
-
     else:
-   
         watches = Product.objects.all()
         return render(request, 'main/watches.html', {'watches': watches, 'page':page})
 
 
 #This is for the branch create-product-page to test how the inidividual watches will look. 
 def product(request,pk):
-
+    request.session['order'] = 'asc'
     #For search-bar trying to implement
     query = ""
     page = 'watches'
