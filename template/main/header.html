@@ -21,118 +21,108 @@
       height:100px;
       background-color: white;
   }
-  .para {
-    font-size: 18px;
-    line-height: 30px;
-    padding-top: 25px;
-    color:black;
-    text-decoration: underline;
-  }
 
   .paddedForSearchBox{
     padding-top: 5px;
     text-align: left;
-}
+  }
 
+  form.index-search-form {
+    position: relative;
+    display: inline-flex;
+  }
 
+  button[name="submit"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 
+  input.search-box {
+    padding-left: 10px;
+    width: 250px;
+    font-family: FontAwesome;
+  }
 
-form.index-search-form {
-  position: relative;
-  display: inline-flex;
+  .search-icon {
+    padding-right: 10px;
+    padding-top: 5px;
+  }
 
+  .search-bar{
+    max-width: 500px;
+    width: 100%
+  }
 
-}
+  form{
+    width:100%
+  }
 
-button[name="submit"] {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
+  .para {
+    color: black;
+    font-size: 18px;
+    line-height: 30px;
+  }
 
-input.search-box {
-  padding-left: 10px;
-  width: 250px;
-  font-family: FontAwesome;
+    /* On mouse-over */
+  .para:hover {
+    color: black;
+    text-decoration: none;
+    border-bottom: solid #e4cc54;
+  }
 
-}
+  .active {
+    color: #e4cc54;
+    font-weight: bold;
+  }
 
-.search-icon {
-  padding-right: 10px;
-  padding-top: 5px;
-}
+  ::selection {
+  background: #e4cc54; /* WebKit/Blink Browsers */
+  }
 
-.search-bar{
-  max-width: 500px;
-  width: 100%
-}
+  ::-moz-selection {
+    background: #e4cc54; /* Gecko Browsers */
+  }
 
-form{
-  width:100%
-}
+  .navbar {
+    -webkit-box-shadow: 0 2px 2px -2px #e4cc54;
+    -moz-box-shadow: 0 2px 2px -2px #e4cc54;
+    box-shadow: 0 4px 1px -3px #e4cc54;
+
+  }
 
 </style>
 
 
 <header>
-  <nav class="navbar navbar-expand-lg bg-secondary fixed-top bg-light">
-
-    
-    <div class="container col-3 justify-content-start">
-      <a href="../"><img src="{% static 'image/logo.png' %}" height="70"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+  <nav class="navbar navbar-light navbar-expand-md bg-light justify-content-center fixed-top">
+    <a href="../" class="navbar-brand d-flex w-50 mr-auto"><img src="{% static 'image/logo.png' %}" height="60"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
         <span class="navbar-toggler-icon"></span>
-      </button>
-        </div>
+    </button>
 
-    <div class="container col-6">
-      <div class="navbar-collapse collapse justify-content-center" id="collapsingNavbar">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="../"> <div class ="para">Home</div> <span class="sr-only">(current)</span></a>
-          <a>&nbsp &nbsp &nbsp &nbsp</a>
-          <a class="nav-item nav-link" href="../watches"> <div class ="para">Watches</div></a>
-          <a>&nbsp &nbsp &nbsp &nbsp</a>
-          <a class="nav-item nav-link" href="../contactus"> <div class="para">Contact Us</div></a>
-        </div>
+    <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
+      <ul class="navbar-nav w-100 justify-content-center">
+          <li class="nav-item">
+              <a class="nav-item nav-link" href="../"> <div class ="para {% if page == 'home' %} active {% endif %}">Home</div></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-item nav-link" href="../watches"> <div class ="para {% if page == 'watches' %} active {% endif %}">Watches</div></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-item nav-link" href="../contactus"> <div class="para {% if page == 'contactus' %} active {% endif %}">Contact Us</div></a>
+          </li>
+      </ul>
+      <div class="nav navbar-nav ml-auto w-100 justify-content-end">
+          <form method = "get" class="index-search-form">
+            <input type="text" class="form-control" name="q" id="id_q" placeholder="Search...">
+            <button name="submit"  type="submit">
+            <img src="https://image.flaticon.com/icons/svg/49/49116.svg" class="search-icon"alt="">
+          </form>
       </div>
-    </div>
-    
-  <div class="container col-3 justify-content-end">
-
-  <!-- 
-  <form action="search.php" method="post" class="index-search-form">
-
-    <div class="paddedForSearchBox"><input name="search" type="text" class="search-box" placeholder="Search" style="outline:solid; background-color:#fff2b3; color:black;"></div>
-
-      <button name="submit" class="" type="submit">
-        <div class="paddedForSearchBox">
-      <img src="https://image.flaticon.com/icons/svg/49/49116.svg" 
-      style="width:20px;height:20px;"
-        alt="">
-      </button>
-
-  -->
-
-  <form method = "get" class="index-search-form">
-   <input type="text" class="form-control" name="q" id="id_q" placeholder="Search...">
-
-    <button name="submit"  type="submit">
-     
-    <img src="https://image.flaticon.com/icons/svg/49/49116.svg" class="search-icon"
-   
-      alt="">
-
-  
-  </form>
 
     </div>
-
-</form>
-
-
-</nav>
-
-
+  </nav>
 </header>
 
 <script type="text/javascript">

@@ -57,3 +57,15 @@ class ProductImage(models.Model):
 
     def __str__(self):
         return str(self.product.brand + " " + self.product.model + " " + self.product.model_number)
+
+class Banner(models.Model):
+    image = models.ImageField(upload_to='images/banner')
+    order = models.PositiveSmallIntegerField(default=0, blank=False, null=False)
+
+    def image_display(self):
+        return mark_safe('<img src="%s" style="height:100px;" />' % self.image.url)
+    image_display.allow_tags = True
+    image_display.short_description = 'Image'
+
+    class Meta(object):
+        ordering = ['order']

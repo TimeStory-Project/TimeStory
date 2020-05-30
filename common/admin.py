@@ -1,5 +1,5 @@
 from django.contrib import admin
-from common.models import Product, ProductImage
+from common.models import Product, ProductImage, Banner
 from django.contrib.auth.models import Group
 from django.utils.safestring import mark_safe
 from django.contrib.admin.widgets import AdminFileWidget
@@ -74,6 +74,24 @@ class ProductImageAdmin(admin.ModelAdmin):
         Return empty perms dict thus hiding the model from admin index.
         """
         return {}
+
+
+@admin.register(Banner)
+class BannerAdmin(admin.ModelAdmin):
+    list_display = ('image_display', 'order')
+    list_display_links = ('image_display', 'order')
+
+    # Show thumbnail in changeview
+    def formfield_for_dbfield(self, db_field, **kwargs):
+        if db_field.name == 'image':
+            # remove request to avoid "__init__() got an unexpected keyword argument 'request'" error
+            kwargs.pop("request", None)
+            kwargs['widget'] = AdminImageWidget
+            return db_field.formfield(**kwargs)
+        return super(BannerAdmin, self).formfield_for_dbfield(db_field, **kwargs)
+
+    class Meta:
+        model = Product
 
 
 # Register your models here.
