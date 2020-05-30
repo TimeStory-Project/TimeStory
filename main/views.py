@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from common.models import Product
-from common.models import ProductImage
+from common.models import ProductImage, Banner
 from django.db.models import Q
 
 
@@ -16,7 +16,8 @@ def home(request):
 
     else:
         watches = Product.objects.all()
-        return render(request, 'main/home.html', {'watches': watches})
+        banner = Banner.objects.all()
+        return render(request, 'main/home.html', {'watches': watches, 'banner': banner})
 
 
 def contactus(request):
