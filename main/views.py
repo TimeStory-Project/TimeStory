@@ -40,19 +40,32 @@ def watches(request):
     query = ""
     page = 'watches'
     if request.GET:
+
         query = request.GET['q']
         queries = get_blog_queryset(query)
         return render(request, "main/watches.html" , {'queries': queries, 'page':page})
 
-    else:
-        #if request.POST['price'] == "sortbyprice":
-         #   watches = Product.objects.all()
-          #  watches = watches.order_by('price')
-           # return render(request, 'main/watches.html', {'watches': watches, 'page':page})
+    elif request.POST:
+        if request.POST['price'] == 'price':
+            watches = Product.objects.all()
+            watches = watches.order_by('price')
+            return render(request, 'main/watches.html', {'watches': watches, 'page':page})
+    
+        elif request.POST['price'] == 'new':
+            watches = Product.objects.all()
+            watches = watches.order_by('-created_at')
+            return render(request, 'main/watches.html', {'watches': watches, 'page':page})
 
-        #else:     
+        else:
             watches = Product.objects.all()
             return render(request, 'main/watches.html', {'watches': watches, 'page':page})
+
+
+
+    else:
+   
+        watches = Product.objects.all()
+        return render(request, 'main/watches.html', {'watches': watches, 'page':page})
 
 
 #This is for the branch create-product-page to test how the inidividual watches will look. 
