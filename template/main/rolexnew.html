@@ -84,7 +84,7 @@
             font-size: 56px;
             font-family: Garamond;
             font-weight: bolder;
-            text-align: center;
+            text-align: left;
         }
 
         .sidebarWatchBrand {
@@ -142,29 +142,10 @@
         **/
 
         .img-fluid {
-          max-width: 95%;
-          height: auto;
-
+          object-fit: cover;
+          width: 100%;
+          height: 300px;
         }
-        
-        .img-resize {
-         
-          width: auto;
-          height: auto;
-        }
-
-        /**
-        .crop-fluid {
-          
-          height: 230px;
-          width: 300px;
-          overflow: hidden;
-         }
-         .crop img {
-          height: auto;
-          width: auto;
-         }
-         **/
 
          .card {
           width: 100%; 
@@ -172,8 +153,61 @@
           object-fit: fill;
          }
 
- 
-        
+         /* Style the sidenav links and the dropdown button */
+        .sidenav a {
+          padding-left:20px;
+          font-size: 15px;
+          font-family: Garamond;
+          text-align: left;
+          color: #696969;
+          display: block;
+          border: none;
+          background: none;
+          width:100%;
+          cursor: pointer;
+          outline: none;
+        }
+
+        .dropdown-btn {
+          font-size: 18px;
+          font-family: Garamond;
+          text-align: left;
+          color: black;
+          display: block;
+          border: none;
+          background: none;
+          width:100%;
+          cursor: pointer;
+          outline: none;
+        }
+
+
+        /* On mouse-over */
+        .sidenav a:hover {
+          text-decoration: underline;
+        }
+
+        /* Add an active class to the active dropdown button */
+        .active {
+          color: black;
+        }
+
+        /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+        .dropdown-container {
+          display: none;
+          padding-left: 8px;
+        }
+
+        /* Optional: Style the caret down icon */
+        .fa-caret-down {
+          float: right;
+          padding-right: 8px;
+        }
+
+        .sidebar-container {
+          padding-left:80px;
+        }
+
     
     </style>
 </head>
@@ -237,86 +271,92 @@
       <div class="col-lg-4 col-md-6 mb-4">
     
       <!-- Side bar navigation menu for all brands of watch -->
-      <div class="col-lg-11 col-md-6 mb-4">
+      <div class="col-lg-11 col-md-6 mb-4 sidebar-container">
 
         <!-- The Header for the side bar menu-->
         <div class="sidebarHeader">
           All Brands
         </div>
-        
-        <!-- Watch Dropdown Brand -->
-        <div class="sidebarDropdown">
-          <div class="sidebarWatchBrand"> Audemars Piguet </div>
-            <div class="dropdown-content">
-              <a href="">New</a>
-              <a href="">Preowned</a> 
-              <a href="">Sold</a> 
-            </div>
-        </div>
-        <div class="gap-1"></div>
-        <!-- End of Watch Dropdown Brand -->
 
-        <!-- Watch Dropdown Brand -->
-        <div class="sidebarDropdown">
-          <div class="sidebarWatchBrand"> Cartier </div>
-            <div class="dropdown-content">
-              <a href="cartiernew">New</a>
-              <a href="cartierused">Preowned</a> 
-              <a href="cartiersold">Sold</a> 
-            </div>
-        </div>
-        <div class="gap-1"></div>
-        <!-- End of Watch Dropdown Brand -->   
+        <div class="sidenav">
+          <button class="dropdown-btn">Audemars Piguet
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-container">
+            <a href="">New</a>
+            <a href="">Preowned</a> 
+            <a href="">Sold</a> 
+          </div>
 
-        <!-- Watch Dropdown Brand -->
-        <div class="sidebarDropdown">
-          <div class="sidebarWatchBrand"> Patek Philippe </div>
-            <div class="dropdown-content">
-              <a href="patekphilippenew">New</a>
-              <a href="patekphilippeused">Preowned</a> 
-              <a href="patekphilippesold">Sold</a> 
-            </div>
-        </div>
-        <div class="gap-1"></div>
-        <!-- End of Watch Dropdown Brand -->
+          <div class="gap-1"></div>
+          <button class="dropdown-btn">Cartier
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-container">
+            <a href="cartiernew">New</a>
+            <a href="cartierused">Preowned</a> 
+            <a href="cartiersold">Sold</a> 
+          </div>
 
-        <!-- Watch Dropdown Brand -->
-        <div class="sidebarDropdown">
-          <div class="sidebarWatchBrand"> Richard Mille </div>
-            <div class="dropdown-content">
-              <a href="richardmillenew">New</a>
-              <a href="richardmilleused">Preowned</a> 
-              <a href="richardmillesold">Sold</a> 
-            </div>
-        </div>
-        <div class="gap-1"></div>
-        <!-- End of Watch Dropdown Brand -->        
+          <div class="gap-1"></div>
+          <button class="dropdown-btn">Patek Philippe
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-container">
+            <a href="patekphilippenew">New</a>
+            <a href="patekphilippeused">Preowned</a> 
+            <a href="patekphilippesold">Sold</a> 
+          </div>
 
-        <!-- Watch Dropdown Brand -->
-        <div class="sidebarDropdown">
-          <div class="sidebarWatchBrand"> Rolex </div>
-            <div class="dropdown-content">
-              <a href="rolexnew">New</a>
-              <a href="rolexused">Preowned</a> 
-              <a href="rolexsold">Sold</a> 
-            </div>
+          <div class="gap-1"></div>
+          <button class="dropdown-btn">Richard Mille
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-container">
+            <a href="richardmillenew">New</a>
+            <a href="richardmilleused">Preowned</a> 
+            <a href="richardmillesold">Sold</a> 
+          </div>
+
+          <div class="gap-1"></div>
+          <button class="dropdown-btn">Rolex
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-container">
+            <a href="rolexnew">New</a>
+            <a href="rolexused">Preowned</a> 
+            <a href="rolexsold">Sold</a> 
+          </div>
         </div>
-        <div class="gap-1"></div>
-        <!-- End of Watch Dropdown Brand -->        
 
       </div>
+      <script>
+      /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+      var dropdown = document.getElementsByClassName("dropdown-btn");
+      var i;
+
+      for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+        } else {
+        dropdownContent.style.display = "block";
+        }
+        });
+      }
+      </script>
       <!-- End of side bar navigation menu for all brands of watches -->
 
     </div>
 
-
+      {% if watches %}
       <!--For the Main Catalougue-->
       <div class="col-lg-8 col-md-6 mb-8">
    
 
       {% for watch in watches %}
-
-      
 
       {% if forloop.counter|modulo:3 == 1 %}
       <div class="row">
@@ -330,11 +370,9 @@
         <!--Start of Card-->
         <div class="card">
 
-          <div class="gap-15"></div>
 
           <!--Card image  src="https://fossil.scene7.com/is/image/FossilPartners/FS5688_1?$sfcc_fos_hi-res$" -->
           <div class="view overlay">
-            <div class="gap-1"></div>
             <div class="watchimage">
               <li class="crop">
               <a href="{% url 'product' pk=watch.pk %}">
@@ -372,7 +410,7 @@
             <div class="gap-small"></div>
 
             <a href="" class="modelnumber">
-              {{watch.model_number}}
+                {{watch.model_number}}
             </a>
 
             <div class="gap-1"></div>
@@ -400,12 +438,9 @@
        <!--Start of Card-->
        <div class="card">
 
-        <div class="gap-15"></div>
 
          <!--Card image image is 224x400-->
-         <div class="view overlay">
-           <div class="gap-1"></div>
-           
+         <div class="view overlay">           
           <div class="watchimage">
             <li class="crop">
             <a href="{% url 'product' pk=watch.pk %}">
@@ -469,11 +504,9 @@
         <!--Start of Card-->
         <div class="card">
 
-          <div class="gap-15"></div>
 
           <!--Card image style="width:200px;height:230px;"-->
           <div class="view overlay">
-            <div class="gap-1"></div>
             <div class="watchimage">
               <li class="crop">
               <a href="{% url 'product' pk=watch.pk %}">
@@ -537,7 +570,237 @@
 
     {% endfor %}
       </div>
-       <!--End of the Main Catalougue-->
+      <!--End of the Main Catalougue-->
+      {% elif queries %} 
+
+      <div class="col-lg-8 col-md-6 mb-8">
+   
+
+        {% for watch in queries %}
+  
+        {% if forloop.counter|modulo:3 == 1 %}
+        <div class="row">
+        {% endif %}
+        
+        {% if forloop.counter|modulo:3 == 1 %}
+  
+        <!--Grid column First watch column-->
+        <div class="col-lg-3 col-md-5 mb-4">
+          
+          <!--Start of Card-->
+          <div class="card">
+  
+            <div class="gap-15"></div>
+  
+            <!--Card image  src="https://fossil.scene7.com/is/image/FossilPartners/FS5688_1?$sfcc_fos_hi-res$" -->
+            <div class="view overlay">
+              <div class="gap-1"></div>
+              <div class="watchimage">
+                <li class="crop">
+                <a href="{% url 'product' pk=watch.pk %}">
+                <img src="{{watch.main_image.url}}"
+                class="img-fluid img-resize"
+                  alt="">
+                </a>
+                </li>
+              </div>
+          
+            </div>
+            <!--Card image-->
+  
+            <div class="gap-15"></div>
+  
+            <!--Card content-->
+            <div class="card-body text-left">
+  
+              <a href="" class="wornstatus">
+                  {{watch.status}}
+              </a>
+  
+              <div class="gap-1"></div>
+  
+              <a href="" class="brand">
+                  {{watch.brand}}
+              </a>
+  
+              <div class="gap-small"></div>
+  
+              <a href="" class="model">
+                  {{watch.model}}
+              </a>
+  
+              <div class="gap-small"></div>
+  
+              <a href="" class="modelnumber">
+                  {{watch.model_number}}
+              </a>
+  
+              <div class="gap-1"></div>
+  
+              <a href="" class="price">
+                  ${{watch.price}}
+              </a>
+              
+              <hr>
+  
+            </div>
+            <!--Card content-->
+  
+          </div>
+          <!--End of Card-->
+        </div>
+        <!--End of first Grid column-->
+  
+        {% elif forloop.counter|modulo:3 == 2 %}
+  
+        <!--Grid column Second watch column-->
+        <div class="col-lg-3 col-md-5 mb-4">
+  
+          
+         <!--Start of Card-->
+         <div class="card">
+  
+          <div class="gap-15"></div>
+  
+           <!--Card image image is 224x400-->
+           <div class="view overlay">
+             <div class="gap-1"></div>
+             
+            <div class="watchimage">
+              <li class="crop">
+              <a href="{% url 'product' pk=watch.pk %}">
+              <img src="{{watch.main_image.url}}" class="img-fluid img.resize"
+                alt="Responsive image">
+              </a>
+              </li>
+              </div>
+           
+           </div>
+           <!--Card image-->
+          
+           <div class="gap-15"></div>
+  
+           <!--Card content-->
+           <div class="card-body text-left">
+  
+             <a href="" class="wornstatus">
+                 {{watch.status}}
+             </a>
+  
+             <div class="gap-1"></div>
+  
+             <a href="" class="brand">
+                 {{watch.brand}}
+             </a>
+  
+             <div class="gap-small"></div>
+  
+             <a href="" class="model">
+                 {{watch.model}}
+             </a>
+  
+             <div class="gap-small"></div>
+  
+             <a href="" class="modelnumber">
+              {{watch.model_number}}
+             </a>
+  
+             <div class="gap-1"></div>
+  
+             <a href="" class="price">
+                 ${{watch.price}}
+             </a>
+             
+             <hr>
+  
+           </div>
+           <!--Card content-->
+  
+         </div>
+         <!--End of Card-->
+       </div>
+       <!--End of Second Grid column-->
+  
+       {% elif forloop.counter|modulo:3 == 0 %}
+  
+        <!--Grid column Third watch column-->
+        <div class="col-lg-3 col-md-5 mb-4">
+          
+          <!--Start of Card-->
+          <div class="card">
+  
+            <div class="gap-15"></div>
+  
+            <!--Card image style="width:200px;height:230px;"-->
+            <div class="view overlay">
+              <div class="gap-1"></div>
+              <div class="watchimage">
+                <li class="crop">
+                <a href="{% url 'product' pk=watch.pk %}">
+                <img src="{{watch.main_image.url}}" 
+                class="img-fluid"
+                  alt="">
+                </li>
+              </div>
+            </div>
+            <!--Card image-->
+  
+            <div class="gap-15"></div>
+  
+            <!--Card content-->
+            <div class="card-body text-left">
+  
+              <a href="" class="wornstatus">
+                  {{watch.status}}
+              </a>
+  
+              <div class="gap-1"></div>
+  
+              <a href="" class="brand">
+                  {{watch.brand}}
+              </a>
+  
+              <div class="gap-small"></div>
+  
+              <a href="" class="model">
+                  {{watch.model}}
+              </a>
+  
+              <div class="gap-small"></div>
+  
+              <a href="" class="modelnumber">
+                {{watch.model_number}}
+              </a>
+  
+              <div class="gap-1"></div>
+  
+              <a href="" class="price">
+                  ${{watch.price}}
+              </a>
+              
+              <hr>
+  
+            </div>
+            <!--Card content-->
+  
+          </div>
+          <!--End of Card-->
+        </div>
+       <!--End of Third Grid column-->
+  
+      {% endif %}
+  
+      {% if forloop.counter|modulo:3 == 0  %}
+      </div> <!-- This div is for the row-->
+      {% endif %}
+  
+  
+      {% endfor %}
+      </div>
+
+      {% else %}
+        <h5>No search result found</h5>
+      {% endif %}
 
 
     </div>
