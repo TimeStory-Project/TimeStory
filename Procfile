@@ -1,1 +1,1 @@
-web: gunicorn timestory.wsgi --log-file -
+web: gunicorn timestory.wsgi:application --log-file -
