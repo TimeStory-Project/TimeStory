@@ -50,6 +50,11 @@ def watches(request):
             watches = Product.objects.all()
             watches = watches.order_by('-created_at')
             return render(request, 'main/watches.html', {'watches': watches, 'page':page})
+        
+        elif 'pricehightolow' in request.GET:
+            watches = Product.objects.all()
+            watches = watches.order_by('-price')
+            return render(request, 'main/watches.html', {'watches': watches, 'page':page})
 
         else:
             watches = Product.objects.all()
@@ -81,34 +86,96 @@ def product(request,pk):
 def rolexnew(request):
     page = 'watches'
     watches = Product.objects.filter(brand="Rolex", condition="Brand new")
-    return render(request, 'main/rolexnew.html' , {'watches':watches, 'page':page})
+
+    if request.GET:
+        if 'price' in request.GET:
+            watches = watches.order_by('price')
+            return render(request, 'main/rolexnew.html', {'watches': watches, 'page':page})
+            
+        elif 'pricehightolow' in request.GET:
+            watches = watches.order_by('-price')
+            return render(request, 'main/rolexnew.html', {'watches': watches, 'page':page})
+    else: 
+        return render(request, 'main/rolexnew.html' , {'watches':watches, 'page':page})
 
 def rolexused(request):
     page = 'watches'
     watches = Product.objects.filter(brand="Rolex").filter(Q(condition="Used but good") | Q(condition="Used but worn"))
-    return render(request, 'main/rolexused.html' , {'watches':watches, 'page':page})
+
+    if request.GET:
+        if 'price' in request.GET:
+            watches = watches.order_by('price')
+            return render(request, 'main/rolexused.html', {'watches': watches, 'page':page})
+            
+        elif 'pricehightolow' in request.GET:
+            watches = watches.order_by('-price')
+            return render(request, 'main/rolexused.html', {'watches': watches, 'page':page})
+
+    else:
+        return render(request, 'main/rolexused.html' , {'watches':watches, 'page':page})
 
 def rolexsold(request):
     page = 'watches'
     watches = Product.objects.filter(brand="Rolex", condition="Sold")
-    return render(request, 'main/rolexnew.html' , {'watches':watches, 'page':page})
+
+    if request.GET:
+        if 'price' in request.GET:
+            watches = watches.order_by('price')
+            return render(request, 'main/rolexsold.html', {'watches': watches, 'page':page})
+            
+        elif 'pricehightolow' in request.GET:
+            watches = watches.order_by('-price')
+            return render(request, 'main/rolexsold.html', {'watches': watches, 'page':page})
+
+    else:
+        return render(request, 'main/rolexsold.html' , {'watches':watches, 'page':page})
 
 
 
 def richardmillenew(request):
     page = 'watches'
     watches = Product.objects.filter(brand="Richard Mille", condition="Brand new")
-    return render(request, 'main/richardmillenew.html' , {'watches':watches, 'page':page})
+
+    if request.GET:
+        if 'price' in request.GET:
+            watches = watches.order_by('price')
+            return render(request, 'main/richardmillenew.html', {'watches': watches, 'page':page})
+            
+        elif 'pricehightolow' in request.GET:
+            watches = watches.order_by('-price')
+            return render(request, 'main/richardmillenew.html', {'watches': watches, 'page':page})
+    else: 
+        return render(request, 'main/richardmillenew.html' , {'watches':watches, 'page':page})
 
 def richardmilleused(request):
     page = 'watches'
     watches = Product.objects.filter(brand="Richard Mille").filter(Q(condition="Used but good") | Q(condition="Used but worn"))
-    return render(request, 'main/richardmilleused.html' , {'watches':watches, 'page':page})
+
+    if request.GET:
+        if 'price' in request.GET:
+            watches = watches.order_by('price')
+            return render(request, 'main/richardmilleused.html', {'watches': watches, 'page':page})
+            
+        elif 'pricehightolow' in request.GET:
+            watches = watches.order_by('-price')
+            return render(request, 'main/richardmilleused.html', {'watches': watches, 'page':page})
+    else:         
+        return render(request, 'main/richardmilleused.html' , {'watches':watches, 'page':page})
 
 def richardmillesold(request):
     page = 'watches'
     watches = Product.objects.filter(brand="Richard Mille", condition="Sold")
-    return render(request, 'main/richardmillenew.html' , {'watches':watches, 'page':page})
+
+    if request.GET:
+        if 'price' in request.GET:
+            watches = watches.order_by('price')
+            return render(request, 'main/richardmillesold.html', {'watches': watches, 'page':page})
+            
+        elif 'pricehightolow' in request.GET:
+            watches = watches.order_by('-price')
+            return render(request, 'main/richardmillesold.html', {'watches': watches, 'page':page})
+    else:        
+        return render(request, 'main/richardmillesold.html' , {'watches':watches, 'page':page})
 
 
 
@@ -117,17 +184,48 @@ def richardmillesold(request):
 def patekphilippenew(request):
     page = 'watches'
     watches = Product.objects.filter(brand="Patek Philippe", condition="Brand new")
-    return render(request, 'main/patekphilippenew.html' , {'watches':watches, 'page':page})
+
+    if request.GET:
+        if 'price' in request.GET:
+            watches = watches.order_by('price')
+            return render(request, 'main/patekphilippenew.html', {'watches': watches, 'page':page})
+            
+        elif 'pricehightolow' in request.GET:
+            watches = watches.order_by('-price')
+            return render(request, 'main/patekphilippenew.html', {'watches': watches, 'page':page})
+    else: 
+        return render(request, 'main/patekphilippenew.html' , {'watches':watches, 'page':page})
 
 def patekphilippeused(request):
     page = 'watches'
     watches = Product.objects.filter(brand="Patek Philippe").filter(Q(condition="Used but good") | Q(condition="Used but worn"))
-    return render(request, 'main/patekphilippeused.html' , {'watches':watches, 'page':page})
+
+    if request.GET:
+        if 'price' in request.GET:
+            watches = watches.order_by('price')
+            return render(request, 'main/patekphilippeused.html', {'watches': watches, 'page':page})
+            
+        elif 'pricehightolow' in request.GET:
+            watches = watches.order_by('-price')
+            return render(request, 'main/patekphilippeused.html', {'watches': watches, 'page':page})
+    else: 
+        return render(request, 'main/patekphilippeused.html' , {'watches':watches, 'page':page})
 
 def patekphilippesold(request):
     page = 'watches'
     watches = Product.objects.filter(brand="Patek Philippe", condition="Sold")
-    return render(request, 'main/patekphilippenew.html' , {'watches':watches, 'page':page})
+
+    if request.GET:
+        if 'price' in request.GET:
+            watches = watches.order_by('price')
+            return render(request, 'main/patekphilippesold.html', {'watches': watches, 'page':page})
+            
+        elif 'pricehightolow' in request.GET:
+            watches = watches.order_by('-price')
+            return render(request, 'main/patekphilippesold.html', {'watches': watches, 'page':page})
+    else: 
+
+        return render(request, 'main/patekphilippesold.html' , {'watches':watches, 'page':page})
 
 
 
@@ -135,34 +233,96 @@ def patekphilippesold(request):
 def cartiernew(request):
     page = 'watches'
     watches = Product.objects.filter(brand="Cartier", condition="Brand new")
-    return render(request, 'main/cartiernew.html' , {'watches':watches, 'page':page})
+
+    if request.GET:
+        if 'price' in request.GET:
+            watches = watches.order_by('price')
+            return render(request, 'main/cartiernew.html', {'watches': watches, 'page':page})
+            
+        elif 'pricehightolow' in request.GET:
+            watches = watches.order_by('-price')
+            return render(request, 'main/cartiernew.html', {'watches': watches, 'page':page})
+    else: 
+        return render(request, 'main/cartiernew.html' , {'watches':watches, 'page':page})
 
 def cartierused(request):
     page = 'watches'
     watches = Product.objects.filter(brand="Cartier").filter(Q(condition="Used but good") | Q(condition="Used but worn"))
-    return render(request, 'main/cartierused.html' , {'watches':watches, 'page':page})
+
+    if request.GET:
+        if 'price' in request.GET:
+            watches = watches.order_by('price')
+            return render(request, 'main/cartierused.html', {'watches': watches, 'page':page})
+            
+        elif 'pricehightolow' in request.GET:
+            watches = watches.order_by('-price')
+            return render(request, 'main/cartierused.html', {'watches': watches, 'page':page})
+    else:       
+        return render(request, 'main/cartierused.html' , {'watches':watches, 'page':page})
 
 def cartiersold(request):
     page = 'watches'
     watches = Product.objects.filter(brand="Cartier", condition="Sold")
-    return render(request, 'main/cartiernew.html' , {'watches':watches, 'page':page})
+
+    if request.GET:
+        if 'price' in request.GET:
+            watches = watches.order_by('price')
+            return render(request, 'main/cartiersold.html', {'watches': watches, 'page':page})
+            
+        elif 'pricehightolow' in request.GET:
+            watches = watches.order_by('-price')
+            return render(request, 'main/cartiersold.html', {'watches': watches, 'page':page})
+    else:       
+
+        return render(request, 'main/cartiersold.html' , {'watches':watches, 'page':page})
 
 
 
 def audemarspiguetnew(request):
     page = 'watches'
     watches = Product.objects.filter(brand="Audemars Piguet", condition="Brand new")
-    return render(request, 'main/audemarspiguetnew.html' , {'watches':watches, 'page':page})
+
+    if request.GET:
+        if 'price' in request.GET:
+            watches = watches.order_by('price')
+            return render(request, 'main/audemarspiguetnew.html', {'watches': watches, 'page':page})
+            
+        elif 'pricehightolow' in request.GET:
+            watches = watches.order_by('-price')
+            return render(request, 'main/audemarspiguetnew.html', {'watches': watches, 'page':page})
+    else:       
+
+        return render(request, 'main/audemarspiguetnew.html' , {'watches':watches, 'page':page})
 
 def audemarspiguetused(request):
     page = 'watches'
     watches = Product.objects.filter(brand="Audemars Piguet").filter(Q(condition="Used but good") | Q(condition="Used but worn"))
-    return render(request, 'main/audemarspiguetused.html' , {'watches':watches, 'page':page})
+
+    if request.GET:
+        if 'price' in request.GET:
+            watches = watches.order_by('price')
+            return render(request, 'main/audemarspiguetused.html', {'watches': watches, 'page':page})
+            
+        elif 'pricehightolow' in request.GET:
+            watches = watches.order_by('-price')
+            return render(request, 'main/audemarspiguetused.html', {'watches': watches, 'page':page})
+    else:   
+        return render(request, 'main/audemarspiguetused.html' , {'watches':watches, 'page':page})
 
 def audemarspiguetsold(request):
     page = 'watches'
     watches = Product.objects.filter(brand="Audemars Piguet", condition="Sold")
-    return render(request, 'main/audemarspiguetnew.html' , {'watches':watches, 'page':page})    
+
+    if request.GET:
+        if 'price' in request.GET:
+            watches = watches.order_by('price')
+            return render(request, 'main/audemarspiguetsold.html', {'watches': watches, 'page':page})
+            
+        elif 'pricehightolow' in request.GET:
+            watches = watches.order_by('-price')
+            return render(request, 'main/audemarspiguetsold.html', {'watches': watches, 'page':page})
+    else:   
+        return render(request, 'main/audemarspiguetsold.html' , {'watches':watches, 'page':page})    
 
 
 

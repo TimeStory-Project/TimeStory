@@ -81,20 +81,20 @@ WSGI_APPLICATION = 'timestory.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 #
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'timestory',
-#        'USER': 'postgres',
-#        'PASSWORD': '1234',
-#        'HOST': 'localhost'
-#    }
-#}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'timestory',
+        'USER': 'postgres',
+        'PASSWORD': '1234',
+        'HOST': 'localhost'
+    }
+}
 
 #new
-DATABASES = {
-    'default': dj_database_url.config()
-}
+#DATABASES = {
+#    'default': dj_database_url.config()
+#}
 
 
 # Password validation
