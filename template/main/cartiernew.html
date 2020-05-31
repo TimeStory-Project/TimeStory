@@ -214,6 +214,15 @@
           color: #e4cc54;
         }
 
+        .sort-btn {
+          color: blue;
+          font-family: Garamond;
+        }
+
+        .sort-btn:hover {
+          color: #e4cc54;
+        }
+
     
     </style>
 </head>
@@ -229,24 +238,16 @@
   <div class="row">
     <div class="col-lg-4 col-md-6 mb-4"></div> 
     <div class="col-lg-8 col-md-6 mb-8"> 
-
-    <form method = "get">
-        <div class="topBarNav"> Sort watches according to: 
-          <button name="price" value="price" style="color:blue">Price (Low to High)</button>
-          |
-          <button name="pricehightolow" value="pricehightolow" style="color:blue">Price (High to low)</button>
-          
-          <!--<i class="fa fa-sort-down"></i>
-          <i class="fa fa-sort-up"></i>
-          <button name="new" value="new" style="color:blue">New</button> 
-          <i class="fa fa-sort-down"></i>
-          <i class="fa fa-sort-up"></i>-->
-        </div>
-        </form>
-
+      
+      <form method = "get">
+      <div class="topBarNav"> Sort watches according to: 
+        <button name="price" value="price" class="sort-btn">Price (Low to High)</button>
+        |
+        <button name="pricehightolow" value="pricehightolow" class="sort-btn">Price (High to low)</button>
+      </div>
+      </form>
     </div>
   </div>
-
 
     <!--Grid row-->
     <div class="row wow fadeIn">
@@ -708,7 +709,7 @@
       </div>
 
       {% else %}
-        <h5>No search result found</h5>
+          <h5>No search result found</h5>
       {% endif %}
 
 

@@ -27,7 +27,16 @@
     <link rel="stylesheet" href="{% static 'css/contactus/Poppins-Regular.ttf' %}" > 
 
     {# The default title is Home #}
-    <title>{% block title %}Home{% endblock %}</title>
+    <title>
+    {% if page == 'home' %}
+        Home
+    {% elif page == 'watches' %}
+        Watches
+    {% else %}
+        Contact Us
+    {% endif %}
+    
+    </title>
 </head>
 
 <body>
