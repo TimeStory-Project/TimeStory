@@ -69,7 +69,7 @@ def product(request,pk):
     if request.GET:
         query = request.GET['q']
         queries = get_blog_queryset(query)
-        return render(request, "main/watches.html" , {'queries': queries})
+        return render(request, "main/watches.html" , {'queries': queries, 'page':page})
 
     else: 
         individualWatch = Product.objects.get(pk=pk)
