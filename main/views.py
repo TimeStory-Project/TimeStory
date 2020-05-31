@@ -30,7 +30,7 @@ def contactus(request):
         return render(request, "main/watches.html" , {'queries': queries, 'page':'watches'})
 
     else:
-        return render(request, 'main/contactus.html', {'page':page})
+        return render(request, 'main/contactUs.html', {'page':page})
 
 def watches(request):
     #For search-bar trying to implement
