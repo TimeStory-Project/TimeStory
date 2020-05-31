@@ -214,6 +214,15 @@
           color: #e4cc54;
         }
 
+        .sort-btn {
+          color: blue;
+          font-family: Garamond;
+        }
+
+        .sort-btn:hover {
+          color: #e4cc54;
+        }
+
     
     </style>
 </head>
@@ -232,15 +241,9 @@
       
       <form method = "get">
       <div class="topBarNav"> Sort watches according to: 
-        <button name="price" value="price" style="color:blue">Price (Low to High)</button>
+        <button name="price" value="price" class="sort-btn">Price (Low to High)</button>
         |
-        <button name="pricehightolow" value="pricehightolow" style="color:blue">Price (High to low)</button>
-        
-        <!--<i class="fa fa-sort-down"></i>
-        <i class="fa fa-sort-up"></i>
-        <button name="new" value="new" style="color:blue">New</button> 
-        <i class="fa fa-sort-down"></i>
-        <i class="fa fa-sort-up"></i>-->
+        <button name="pricehightolow" value="pricehightolow" class="sort-btn">Price (High to low)</button>
       </div>
       </form>
     </div>
