@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import django_heroku
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -77,7 +76,8 @@ TEMPLATES = [
 WSGI_APPLICATION = 'timestory.wsgi.application'
 
 
-# Database
+#######################################################################################
+# Debug Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 # DATABASES = {
@@ -90,11 +90,14 @@ WSGI_APPLICATION = 'timestory.wsgi.application'
 #     }
 # }
 
-# new
+#######################################################################################
+# Production Database
+
 DATABASES = {
    'default': dj_database_url.config()
 }
 
+#######################################################################################
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -142,7 +145,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-# AWS S3 SETUP
+#######################################################################################
+# AWS S3 Storage
 
 AWS_DEFAULT_ACL = None
 AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
@@ -157,10 +161,13 @@ AWS_LOCATION = 'static'
 STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 DEFAULT_FILE_STORAGE = 'timestory.storage_backends.MediaStorage'
-
+#######################################################################################
+# Local Storage
 
 # STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+#######################################################################################
 
 
 
