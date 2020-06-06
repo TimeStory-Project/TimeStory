@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '+becoja0%$^+dkqn=bm)mc_7agw8a3ma=bn-)a#0m(3b%&gg(g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['timestorysg.herokuapp.com', '127.0.0.1']
 
@@ -77,25 +77,25 @@ WSGI_APPLICATION = 'timestory.wsgi.application'
 
 
 #######################################################################################
-# Debug Database
+# Local Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'timestory',
-#         'USER': 'postgres',
-#         'PASSWORD': '1234',
-#         'HOST': 'localhost'
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'timestory',
+        'USER': 'postgres',
+        'PASSWORD': '1234',
+        'HOST': 'localhost'
+    }
+}
 
 #######################################################################################
 # Production Database
 
-DATABASES = {
-   'default': dj_database_url.config()
-}
+# DATABASES = {
+#    'default': dj_database_url.config()
+# }
 
 #######################################################################################
 
@@ -136,7 +136,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 
-
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
@@ -148,28 +147,27 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 #######################################################################################
 # AWS S3 Storage
 
-AWS_DEFAULT_ACL = None
-AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
-AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
-AWS_STORAGE_BUCKET_NAME = 'timestory-assets'
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-AWS_S3_OBJECT_PARAMETERS = {
-    'CacheControl': 'max-age=86400',
-}
-AWS_LOCATION = 'static'
+# AWS_DEFAULT_ACL = None
+# AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+# AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+# AWS_STORAGE_BUCKET_NAME = 'timestory-assets'
+# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+# AWS_S3_OBJECT_PARAMETERS = {
+#     'CacheControl': 'max-age=86400',
+# }
+# AWS_LOCATION = 'static'
 
-STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-DEFAULT_FILE_STORAGE = 'timestory.storage_backends.MediaStorage'
+# STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# DEFAULT_FILE_STORAGE = 'timestory.storage_backends.MediaStorage'
+
 #######################################################################################
 # Local Storage
 
-# STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 #######################################################################################
-
-
 
 
 LOGGING = {
