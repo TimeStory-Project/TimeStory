@@ -13,9 +13,8 @@ BRAND_CHOICES = (
 )
 
 CONDITION_CHOICES = (
-    ('Brand new', 'Brand new'),
-    ('Used but good', 'Used but good'),
-    ('Used but worn', 'Used but worn'),
+    ('Preowned', 'Preowned'),
+    ('Unworn', 'Unworn'),
     ('Sold', 'Sold'),
 )
 
@@ -24,7 +23,6 @@ class Product(models.Model):
     brand = models.CharField(max_length=50, default="", choices=BRAND_CHOICES)
     model = models.CharField(max_length=100, default="")
     model_number = models.CharField(max_length=100, default="")
-    availability = models.BooleanField(default=True)
     price = models.IntegerField(default=0)
     condition = models.CharField(max_length=20, default="", choices=CONDITION_CHOICES)
     description = models.TextField(default="")
