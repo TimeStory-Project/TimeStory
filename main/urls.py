@@ -8,23 +8,23 @@ urlpatterns = [
     path('watches' , views.watches, name='watches'),
     path('<int:pk>/product', views.product, name='product'),
 
-    path('rolexnew' , views.rolexnew, name='rolexnew'),
-    path('rolexused', views.rolexused, name='rolexused'),
+    path('rolexunworn' , views.rolexunworn, name='rolexunworn'),
+    path('rolexpreowned', views.rolexpreowned, name='rolexpreowned'),
     path('rolexsold', views.rolexsold, name='rolexsold'),
 
-    path('richardmillenew' , views.richardmillenew, name='richardmillenew'),
-    path('richardmilleused', views.richardmilleused, name='richardmilleused'),
+    path('richardmilleunworn' , views.richardmilleunworn, name='richardmilleunworn'),
+    path('richardmillepreowned', views.richardmillepreowned, name='richardmillepreowned'),
     path('richardmillesold', views.richardmillesold, name='richardmillesold'),
 
-    path('patekphilippenew' , views.patekphilippenew, name='patekphilippenew'),
-    path('patekphilippeused', views.patekphilippeused, name='patekphilippeused'),
+    path('patekphilippeunworn' , views.patekphilippeunworn, name='patekphilippeunworn'),
+    path('patekphilippepreowned', views.patekphilippepreowned, name='patekphilippepreowned'),
     path('patekphilippesold', views.patekphilippesold, name='patekphilippesold'),
 
-    path('cartiernew' , views.cartiernew, name='cartiernew'),
-    path('cartierused', views.cartierused, name='cartierused'),
+    path('cartierunworn' , views.cartierunworn, name='cartierunworn'),
+    path('cartierpreowned', views.cartierpreowned, name='cartierpreowned'),
     path('cartiersold', views.cartiersold, name='cartiersold'),
 
-    path('audemarspiguetnew' , views.audemarspiguetnew, name='audemarspiguetnew'),
-    path('audemarspiguetused', views.audemarspiguetused, name='audemarspiguetused'),
+    path('audemarspiguetunworn' , views.audemarspiguetunworn, name='audemarspiguetunworn'),
+    path('audemarspiguetpreowned', views.audemarspiguetpreowned, name='audemarspiguetpreowned'),
     path('audemarspiguetsold', views.audemarspiguetsold, name='audemarspiguetsold')
 ]

@@ -198,12 +198,6 @@
                 <div class="gap-60"></div>
                     <div class="leftside d-flex justify-content-center align-items-center">
                     <!-- Left Side -->
-                    <!-- 
-                    <div class="watchimage img-hover-zoom img-hover-zoom--xyz">
-                        <img src="https://www.thewatchcompany.com/media/catalog/product/cache/7201a60ec3a4244a7d22fa59c65163e2/1/1/116610_20LN_1546998610.jpg" 
-                        alt="">
-                    </div>
-                    -->
                     <div class="watchimage img-hover-zoom img-hover-zoom--xyz">
                         <div id="cover"> 
                             <div id="slideshow">
@@ -264,7 +258,7 @@
 
                                 <div class="product-detail-top">
                                             <p></p>
-                                            {% if individualWatch.availability == 1 %}
+                                            {% if individualWatch.condition != 'Sold' %}
                                                 <h5>Available</h5>
                                             {% else %}
                                                 <h5>Unavailable</h5>
