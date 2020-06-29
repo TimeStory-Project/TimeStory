@@ -28,7 +28,7 @@ def contactus(request):
         query = request.GET['q']
         queries = get_blog_queryset(query)
         return render(request, "main/watches.html" , {'queries': queries, 'page':'watches'})
-
+        
     else:
         return render(request, 'main/contactUs.html', {'page':page})
 
