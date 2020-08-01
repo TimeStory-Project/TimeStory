@@ -26,18 +26,18 @@
     <link rel="stylesheet" href="{% static 'css/contactus/Montserrat-Bold.ttf' %}" > 
     <link rel="stylesheet" href="{% static 'css/contactus/Poppins-Regular.ttf' %}" > 
 
-    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" >
-
     {# The default title is Home #}
     <title>
-    {% if page == 'home' %}
+    {% if page == 'TimeStory | Home' %}
         Home
-    {% elif page == 'watches' %}
+    {% elif page == 'TimeStory | Watches' %}
         Watches
     {% else %}
-        Contact Us
+        TimeStory | Contact Us
     {% endif %}
     </title>
+
+    <link rel="shortcut icon" type="image/png" href="{% static 'image/favicon.png' %}"/>
 </head>
 
 <body>
